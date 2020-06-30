@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 ############# backend route ##########################
 
-Route::get('admin/index','backend\indexController@index');
+Route::get('admin/index','backend\indexController@index')->middleware('auth');
 
