@@ -13,14 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-#################### frontend route
-Route::get('/', function () {
-    return view('welcome');
-});
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+############# backend route ##########################
 
-Route::group(['namespace'=>'frontEnd'],function(){
-    Route::get('index','indexController@homePage');
-});
+Route::get('admin/index','backend\indexController@index');
 
