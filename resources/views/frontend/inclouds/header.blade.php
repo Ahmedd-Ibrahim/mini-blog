@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>pro</title>
+  <title>pro @yield('title')</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -25,13 +25,7 @@
 
   <!-- Template Main CSS File -->
 <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Dewi - v2.1.0
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+<link href="{{asset('frontend/assets/css/main.css')}}" rel="stylesheet">
 </head>
 <body>
 
@@ -39,18 +33,18 @@
   <header id="header" class="fixed-top ">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="{{url('index')}}">Dewi</a></h1>
+    <h1 class="logo"><a href="{{url('index')}}">{{__('header.Dewi')}}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{url('index')}}">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+        <li class="active"><a href="{{url('index')}}">{{__('header.Home')}}</a></li>
+        <li><a href="{{url('about')}}">{{__('header.About')}}</a></li>
+          <li><a href="{{url('index')}}">{{__('header.Services')}}</a></li>
+          <li><a href="{{url('portfolio')}}">{{__('header.Portfolio')}}</a></li>
+        <li><a href="{{url('index')}}">{{__('header.Team')}}</a></li>
+          <li class="drop-down"><a href="">{{__('header.Drop Down')}}</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="drop-down"><a href="#">Deep Drop Down</a>
@@ -67,12 +61,20 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+        <li><a href="{{url('contact')}}">{{__('header.Contact')}}</a></li>
+        <li class="drop-down"><a href="#">{{__('header.language')}}</a>
+
+            <ul>
+            <li><a href="{{ LaravelLocalization::getLocalizedURL('ar') }}">Arabic</a></li>
+                <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a></li>
+
+              </ul>
+            <li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+    <a href="{{url('about')}}" class="get-started-btn scrollto">Get Started</a>
 
     </div>
   </header><!-- End Header -->

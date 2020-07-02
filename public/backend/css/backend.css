@@ -1,0 +1,8 @@
+body{
+    overflow-x: hidden;
+}
+/* ########## start category page ######### */
+.card-body .mycategory, .card-body .mybutton{
+    padding-bottom: 8px;
+}
+/* ########## End category page ######### */

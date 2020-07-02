@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,15 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['namespace'=>'frontEnd'],function(){
+Route::group([
+    'namespace'=>'frontEnd',
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+],function(){
     Route::get('index','indexController@homePage');
+    Route::get('portfolio','indexController@portfolio');
+    Route::get('contact','indexController@contact');
+    Route::get('about','indexController@about');
+    Route::get('tester','indexController@homePage');
 });
 
