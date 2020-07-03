@@ -11,4 +11,8 @@ class blogController extends Controller
     public function blog(){
         return view('frontend.blog');
     }
+    public function post(){
+
+        return view('frontend.post');
+    }
 }

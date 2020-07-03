@@ -33,9 +33,17 @@
                     {{$message}}
                   </div>
                   @enderror
-                  <div class="form-group col-md-12">
+                  {{-- <div class="form-group col-md-12">
                     <label for="inputPassword4">Content</label>
                     <input type="text" class="form-control" id="inputPassword4" placeholder="content" name="content">
+                  </div> --}}
+
+
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label>Your Post Content</label>
+                      <textarea  name="content" class="form-control" rows="3"></textarea>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -52,7 +60,7 @@
       <div class="col-lg-6">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Your posts</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Your posts Title</h6>
           </div>
           <div class="card-body">
               @error('delete-error')

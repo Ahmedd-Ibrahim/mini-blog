@@ -32,11 +32,17 @@
               {{$message}}
             </div>
             @enderror
-            <div class="form-group col-md-12">
+            {{-- <div class="form-group col-md-12">
               <label for="inputPassword4">Content</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="inputPassword4" placeholder="Content" name="content" value="{{$edit->content}}">
-            </div>
+            </div> --}}
 
+            <div class="col-lg-12">
+                <div class="form-group">
+                  <label>Your New Post Content</label>
+                  <textarea  name="content" class="form-control" rows="3"></textarea>
+                </div>
+              </div>
             @error('content')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
@@ -45,7 +51,7 @@
             @enderror
 
           </div>
-         
+
 
           <button type="submit" class="btn btn-primary">Save!</button>
         <a href="{{url('admin/posts')}}" class="btn btn-primary">back To posts</a>

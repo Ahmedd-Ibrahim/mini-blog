@@ -8,6 +8,13 @@
   <title>pro @yield('title')</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+{{--
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
+
+
 
   <!-- Favicons -->
   <link href="{{asset('frontend/assets/img/favicon.png')}}" rel="icon">
@@ -15,7 +22,7 @@
   <!-- Google Fonts -->
 <link href="{{url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i')}}" rel="stylesheet">
   <!-- Vendor CSS Files -->
-<link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
 <link href="{{asset('vendor/icofont/icofont.min.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/venobox/venobox.css')}}" rel="stylesheet">
@@ -23,10 +30,15 @@
 <link href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-
+<link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"  id="bootstrap-css">
+<script src="{{asset('vendor/jquery/jquery.min.js')}}" rel="stylesheet" > </script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" > </script>
   <!-- Template Main CSS File -->
+
+
 <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
 <link href="{{asset('frontend/assets/css/main.css')}}" rel="stylesheet">
+
 </head>
 <body>
 

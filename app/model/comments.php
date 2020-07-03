@@ -4,13 +4,13 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class posts extends Model
+class comments extends Model
 {
     //
-    protected $table = "posts";
+    protected $table ='comments';
 
     protected $fillable = [
-        'title', 'content',
+        'post_id', 'guest_name', 'comment',
     ];
 
     /**

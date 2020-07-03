@@ -31,6 +31,10 @@ Route::group([
     Route::get('contact','indexController@contact');
     Route::get('about','indexController@about');
     Route::get('blog','blogController@blog');
+    Route::get('blog/post','blogController@post');
     Route::get('tester','indexController@homePage');
+
+
+
 });
 

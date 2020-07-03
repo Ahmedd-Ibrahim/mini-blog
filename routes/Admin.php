@@ -87,6 +87,12 @@ Route::group(['prefix' => 'admin','namespace'=>'backend','middleware'=>'auth'], 
     Route::post('posts/update/{posts}','postsController@update');  // update post
     });
     // #### End posts route
+    ###### Comments route
+    Route::group(['namespace'=>'blog'],function(){
+    Route::get('comments','commentsController@index');  //  mange blog posts
+
+    });
+    #### End comments route
 
 
     // #### main pages

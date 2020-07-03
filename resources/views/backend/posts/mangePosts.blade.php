@@ -43,8 +43,6 @@
                             <div class="card-header" id="headingOne">
                               <h5 class="mb-0">
 
-
-
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="mycategory">
@@ -72,7 +70,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+             
 
 
 
