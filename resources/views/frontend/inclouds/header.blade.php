@@ -22,6 +22,7 @@
 <link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
+<link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
 <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet">
@@ -62,6 +63,7 @@
             </ul>
           </li>
         <li><a href="{{url('contact')}}">{{__('header.Contact')}}</a></li>
+        <li><a href="{{url('blog')}}">{{__('blog')}}</a></li>
         <li class="drop-down"><a href="#">{{__('header.language')}}</a>
 
             <ul>

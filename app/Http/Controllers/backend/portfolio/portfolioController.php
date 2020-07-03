@@ -16,6 +16,10 @@ class portfolioController extends Controller
         $Portfolios = Portfolio::get();
         return view('backend.portfolio.portfolio',['Portfolios'=>$Portfolios]);
     }
+    public function add(){   // Add new portfolio
+        $Portfolios = Portfolio::get();
+        return view('backend.portfolio.add',['Portfolios'=>$Portfolios]);
+    }
 
        // insert categories
        public function save(Request $request){
@@ -26,6 +30,7 @@ class portfolioController extends Controller
             'name' => 'required | min:3 ',
             'discription' => 'required | min:3 ',
             'photo' => 'required ',
+            'link' => 'required ',
         ]);
         if($valedator -> fails()){
 
@@ -34,22 +39,27 @@ class portfolioController extends Controller
         }
         // insert data and redirect
 
+        $full_name = time().'.'. $request->photo->getClientOriginalExtension();
+        $move_to = 'imgs/portfolio/';
+        $full_photo = $move_to.$full_name;
+       $request->photo->move($move_to,$full_name);
         Portfolio::create([
             'name'           => $request->name,
             'discription'  => $request->discription,
-            'photo' => $request->photo
+            'photo' =>   $full_photo ,
+            'link' =>   $request->link ,
         ]);
-        return redirect('admin/Portfolio')->with(['added'=> 'success added Your Category']);
+        return redirect('admin/portfolio')->with(['added'=> 'success added Your Category']);
             }
             // Delete
 public function delete($Portfolio_id){
 
     $del = Portfolio::find($Portfolio_id);
     if(!$del){
-        return redirect('admin/Portfolio')->withErrors(['delete-error'=>'You trying to delete uknown Portfolio']);
+        return redirect('admin/portfolio')->withErrors(['delete-error'=>'You trying to delete uknown Portfolio']);
     }
     $del->delete();
-    return redirect('admin/Portfolio')->with(['success'=>'Success Deleted Category']);
+    return redirect('admin/portfolio')->with(['success'=>'Success Deleted this Portfolio']);
 }
 
 // edit
@@ -60,23 +70,33 @@ public function edit($Portfolio_id)
     $edit = Portfolio::find($Portfolio_id);
 
     if(!$edit){
-        return redirect('admin/Portfolio');
+        return redirect('admin/portfolio');
     }
-  return view('backend/Portfolio/edit',['edit'=>$edit]);
+  return view('backend/portfolio/edit',['edit'=>$edit]);
 }
 
 ############ update Portfolio ########
 
 public function update(Request $request , $Portfolio_id ){
 
-    $myCat = Portfolio::find($Portfolio_id);
+    $myCat = portfolio::find($Portfolio_id);
 
     if(!$myCat){
         return redirect()->back();
     }
-    $myCat->update($request->all());
 
-    return redirect('admin/Portfolio')->with(['updated'=>'Your Category have been Updated']);
+$full_name = time().'.'. $request->photo->getClientOriginalExtension();
+$move_to = 'imgs/portfolio/';
+$full_photo = $move_to.$full_name;
+
+$request->photo->move($move_to,$full_name);
+$myCat->update([
+    'name'           => $request->name,
+    'discription'  => $request->discription,
+    'link'  => $request->link,
+    'photo' =>     $full_photo
+]);
+return redirect('admin/portfolio')->with(['updated'=> 'success added Your portfolio']);
     }
 
 

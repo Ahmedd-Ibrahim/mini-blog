@@ -54,14 +54,7 @@
             </div>
             @enderror
           </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Active ?
-              </label>
-            </div>
-          </div>
+          
 
           <button type="submit" class="btn btn-primary">Save!</button>
         <a href="{{url('admin/contact')}}" class="btn btn-primary">back To contact</a>

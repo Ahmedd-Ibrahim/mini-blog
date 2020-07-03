@@ -10,9 +10,14 @@ use Illuminate\Support\Facades\Validator;
 class servicesController extends Controller
 {
     //
-    public function index(){   // show categories
+    public function index(){   // show main page
         $servicess = Services::get();
         return view('backend.services.services',['servicess'=>$servicess]);
+    }
+    //
+    public function add(){   // Add new Services
+        $servicess = Services::get();
+        return view('backend.services.add',['servicess'=>$servicess]);
     }
 
 
@@ -27,16 +32,20 @@ class servicesController extends Controller
             'photo' => 'required ',
         ]);
         if($valedator -> fails()){
-
-
             return redirect()->back()->withErrors($valedator)->withInputs($request->all());
         }
         // insert data and redirect
 
+
+        $full_name = time().'.'. $request->photo->getClientOriginalExtension();
+        $move_to = 'imgs/services/';
+        $full_photo = $move_to.$full_name;
+
+       $request->photo->move($move_to,$full_name);
         services::create([
             'name'           => $request->name,
             'discription'  => $request->discription,
-            'photo' => $request->photo
+            'photo' =>     $full_photo
         ]);
         return redirect('admin/services')->with(['added'=> 'success added Your Category']);
             }
@@ -74,9 +83,18 @@ public function update(Request $request , $services_id ){
     if(!$myCat){
         return redirect()->back();
     }
-    $myCat->update($request->all());
 
-    return redirect('admin/services')->with(['updated'=>'Your Category have been Updated']);
-    }
+$full_name = time().'.'. $request->photo->getClientOriginalExtension();
+$move_to = 'imgs/services/';
+$full_photo = $move_to.$full_name;
+
+$request->photo->move($move_to,$full_name);
+$myCat->update([
+    'name'           => $request->name,
+    'discription'  => $request->discription,
+    'photo' =>     $full_photo
+]);
+return redirect('admin/services')->with(['updated'=> 'success added Your Category']);
+}
 
 }

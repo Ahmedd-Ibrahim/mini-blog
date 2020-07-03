@@ -16,10 +16,15 @@ class aboutController extends Controller
         $abouts = about::get();
         return view('backend.about.about',['abouts'=>$abouts]);
     }
+    public function add(){   // show about
+
+        $abouts = about::get();
+        return view('backend.about.add',['abouts'=>$abouts]);
+    }
 
        // insert categories
        public function save(Request $request){
-           
+
         // valdete data before insert
 
 
@@ -35,10 +40,14 @@ class aboutController extends Controller
         }
         // insert data and redirect
 
+        $full_name = time().'.'. $request->photo->getClientOriginalExtension();
+        $move_to = 'imgs/about/';
+        $full_photo = $move_to.$full_name;
+       $request->photo->move($move_to,$full_name);
         about::create([
             'name'           => $request->name,
             'discription'  => $request->discription,
-            'photo' => $request->photo
+            'photo' => $full_photo
         ]);
         return redirect('admin/about')->with(['added'=> 'success added Your Category']);
             }
@@ -75,9 +84,18 @@ public function update(Request $request , $about_id ){
     if(!$myCat){
         return redirect()->back();
     }
-    $myCat->update($request->all());
 
-    return redirect('admin/about')->with(['updated'=>'Your Category have been Updated']);
+$full_name = time().'.'. $request->photo->getClientOriginalExtension();
+$move_to = 'imgs/about/';
+$full_photo = $move_to.$full_name;
+
+$request->photo->move($move_to,$full_name);
+$myCat->update([
+    'name'           => $request->name,
+    'discription'  => $request->discription,
+    'photo' =>     $full_photo
+]);
+return redirect('admin/about')->with(['updated'=> 'success added Your about info']);
     }
 
 }

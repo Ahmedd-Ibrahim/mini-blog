@@ -1,8 +1,29 @@
+
+/* ########## start Genral touch ######### */
 body{
     overflow-x: hidden;
 }
-/* ########## start category page ######### */
+
 .card-body .mycategory, .card-body .mybutton{
     padding-bottom: 8px;
 }
-/* ########## End category page ######### */
+ .mybutton{
+    float: right;
+}
+/* ########## End  Genral touch  ######### */
+
+
+
+/* ########## begin  Services page  ######### */
+.imge-box{
+    max-width: 100px;
+    max-height: 100px;
+    overflow: hidden;
+}
+.imge-box .imge{
+width: 100%;
+height: 100%;
+}
+/* ########## End  Services page  ######### */
+
+

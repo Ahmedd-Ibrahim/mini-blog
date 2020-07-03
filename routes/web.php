@@ -30,6 +30,7 @@ Route::group([
     Route::get('portfolio','indexController@portfolio');
     Route::get('contact','indexController@contact');
     Route::get('about','indexController@about');
+    Route::get('blog','blogController@blog');
     Route::get('tester','indexController@homePage');
 });
 

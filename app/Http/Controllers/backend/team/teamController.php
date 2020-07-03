@@ -15,6 +15,10 @@ class teamController extends Controller
         $teams = team::get();
         return view('backend.team.team',['teams'=>$teams]);
     }
+    public function add(){   // show categories
+        $teams = team::get();
+        return view('backend.team.add',['teams'=>$teams]);
+    }
 
 
        // insert categories
@@ -83,9 +87,19 @@ public function update(Request $request , $id ){
     if(!$myCat){
         return redirect()->back();
     }
-    $myCat->update($request->all());
 
-    return redirect('admin/team')->with(['updated'=>'Your Category have been Updated']);
+$full_name = time().'.'. $request->photo->getClientOriginalExtension();
+$move_to = 'imgs/team/';
+$full_photo = $move_to.$full_name;
+
+$request->photo->move($move_to,$full_name);
+$myCat->update([
+    'name'           => $request->name,
+    'title'  => $request->title,
+    'social'  => $request->social,
+    'photo' =>     $full_photo
+]);
+return redirect('admin/team')->with(['updated'=> 'success added Your Category']);
     }
 
 

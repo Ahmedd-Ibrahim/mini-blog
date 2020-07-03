@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +48,11 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="{{url('index')}}">
+        <i class="fas fa-home"></i>
+          <span>visit Your Site</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -64,12 +71,13 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Services:</h6>
+
+          <a class="collapse-item" href="{{url('admin/pages')}}">pages</a>
           <a class="collapse-item" href="{{url('admin/services')}}">Services Settings</a>
           <a class="collapse-item" href="{{url('admin/portfolio')}}">portfolio Settings</a>
           <a class="collapse-item" href="{{url('admin/about')}}">About Settings</a>
           <a class="collapse-item" href="{{url('admin/contact')}}">Contact Settings</a>
           <a class="collapse-item" href="{{url('admin/team')}}">team Settings</a>
-
           </div>
         </div>
       </li>
@@ -78,15 +86,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>Blog</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Custom posts:</h6>
+            <a class="collapse-item" href="{{url('admin/posts')}}">Add New Post  </a>
+          <a class="collapse-item" href="{{url('admin/mangePosts')}}">Your posts</a>
+
           </div>
         </div>
       </li>
@@ -303,7 +310,9 @@
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@auth
+                    {{Auth::user()->name}}
+                @endauth</span>
                   <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                 </a>
                 <!-- Dropdown - User Information -->

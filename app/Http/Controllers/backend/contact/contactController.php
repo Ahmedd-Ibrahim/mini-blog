@@ -33,7 +33,7 @@ class contactController extends Controller
             return redirect()->back()->withErrors($valedator)->withInputs($request->all());
         }
         // insert data and redirect
-
+      
         contact::create([
             'address'           => $request->address,
             'email'  => $request->email,

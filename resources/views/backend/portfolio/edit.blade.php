@@ -8,22 +8,22 @@
  <!-- Edit categories -->
  <div class="card shadow ">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Edit Portfolioes</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Edit portfolio</h6>
     </div>
     <div class="card-body">
         @if(Session::has('edit'))
     <p class="btn btn-success">{{Session::get('edit')}}</p>
         @endif
         @if(Session::has('updated'))
-    <p class="btn btn-success">{{Session::get('updated') .' to -> ' . $edit['name'] }} </p>
+    <p class="btn btn-success">{{Session::get('updated') .' to -> ' . $edit->name }} </p>
         @endif
-      <form method="POST" action="{{ url('admin/portfolio/update',$edit -> id) }}">
+      <form method="POST" action="{{ url('admin/portfolio/update',$edit -> id)}}" enctype="multipart/form-data">
           @csrf
 
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="inputEmail4">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name" value="{{$edit['name']}}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name" value="{{$edit->name}}">
             </div>
 
             @error('name')
@@ -34,7 +34,7 @@
             @enderror
             <div class="form-group col-md-12">
               <label for="inputPassword4">Discription</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription" value="{{$edit['discription']}}">
+            <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription" value="{{$edit->discription}}">
             </div>
 
             @error('discription')
@@ -44,8 +44,19 @@
             </div>
             @enderror
             <div class="form-group col-md-12">
-              <label for="inputPassword4">photo</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="photo" name="photo" value="{{$edit->photo}}">
+              <label for="inputPassword4">link</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="link" value="{{$edit->link}}">
+            </div>
+
+            @error('link')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">this is photo</label>
+            <input type="file" class="form-control" id="inputPassword4" placeholder="photo" name="photo">
             </div>
             @error('photo')
             <div class="clearFix"></div>

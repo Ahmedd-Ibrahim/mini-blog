@@ -12,8 +12,8 @@ class indexController extends Controller
     //
     public function homePage(){
         $team = team::get();
-        // return view('frontend.index',['team'=>$team]);
-        return view('frontend.tester',['team'=>$team]);
+        return view('frontend.index',['team'=>$team]);
+        // return view('frontend.tester',['team'=>$team]);
     }
     public function portfolio(){
         return view('frontend.portfolio');

@@ -8,66 +8,10 @@
     <h1 class="h3 mb-4 text-gray-800">Portfolio</h1>
 
     <div class="row">
-
-      <div class="col-lg-6">
-
-        <!-- Circle Buttons -->
+      <div class="col-lg-12">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Add New Portfolio</h6>
-          </div>
-          <div class="card-body">
-              @if(Session::has('added'))
-          <p class="btn btn-success">{{Session::get('added')}}</p>
-              @endif
-            <form method="POST" action="{{ url('admin/Portfolio/save') }}">
-                @csrf
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label for="inputEmail4">Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name">
-                  </div>
-                  @error('name')
-                  <div class="clearFix"></div>
-                  <div class="alert alert-danger" role="alert">
-                    {{$message}}
-                  </div>
-                  @enderror
-                  <div class="form-group col-md-12">
-                    <label for="inputPassword4">Discription</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription">
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="inputPassword4">photo</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="photo">
-                  </div>
-                  @error('photo')
-                  <div class="clearFix"></div>
-                  <div class="alert alert-danger" role="alert">
-                    {{$message}}
-                  </div>
-                  @enderror
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Active ?
-                    </label>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Save!</button>
-              </form>
-          </div>
-        </div>
-
-        <!-- Brand Buttons -->
-
-      </div>
-      <div class="col-lg-6">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Your Portfolio</h6>
+            <a href="{{url('admin/portfolio/add')}}"  class="m-0 font-weight-bold btn btn-primary">Add New portFolio</a>
           </div>
           <div class="card-body">
               @error('delete-error')
@@ -79,23 +23,73 @@
               @if(Session::has('updated'))
               <p class="btn btn-success"> {{Session::get('updated')}}</p>
               @endif
+              <div class="row">
+                @foreach ($Portfolios as $Portfolio)
 
+                <div class="col-md-6">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <div class="header-box">
+                                <div class="row">
+                                    <div class="col-md-6">{{$Portfolio->name}}</div>
+                                    <div class="col-md-6">
+
+                                      <div class="mybutton">
+                                        <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}' href="#"><button class="btn btn-danger"> delete <i class="fas fa-trash-alt"></i></button></a>
+                                        <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" ><button class="btn btn-info"> Edit <i class="fas fa-edit"></i></button></a>
+
+
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    {{-- photo --}}
+                                    <div class="imge-box">
+                                    <img class="imge" src="{{asset($Portfolio->photo)}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    {{-- discripton --}}
+                                    <div class="discription-box">
+                                        {{$Portfolio->discription}}
+                                    </div>
+                                </div>
+                                 </div>
+                        </div>
+                        </div>
+                </div>
+
+
+
+{{--
             @foreach ($Portfolios as $Portfolio)
             <div class="my-2"></div>
-            <div class="mycategory">
-                <a href="#" class="btn btn-success btn-icon-split">
-                    <span class="icon text-white-50">
-                      <i class="fas fa-check"></i>
-                    </span>
-                    <span class="text">{{$Portfolio->name}}</span>
-                  </a>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="mycategory">
+                        <a href="#" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                              <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">{{$Portfolio->name}}</span>
+                          </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="mybutton">
+                        <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}'  href="#" class="btn btn-danger " type="button">Delete <i class="fas fa-trash-alt"></i></a>
+                        <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" class="btn btn-info">Edit <i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
             </div>
 
 
-            <div class="mybutton">
-                <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}'  href="#" class="btn btn-danger " type="button">Delete <i class="fas fa-trash-alt"></i></a>
-                <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" class="btn btn-info">Edit <i class="fas fa-edit"></i></a>
-            </div>
+ --}}
+
             <div class="my-2"></div>
 
  <!-- Delete Portfolio Modal-->
@@ -112,7 +106,7 @@
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 
-          <a class="btn btn-primary" href="{{url('admin/Portfolio/delete/'.$Portfolio->id)}}" >Delete! </a>
+          <a class="btn btn-primary" href="{{url('admin/portfolio/delete/'.$Portfolio->id)}}" >Delete! </a>
 
         </div>
       </div>
