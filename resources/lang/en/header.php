@@ -7,6 +7,7 @@ return [
         "Home" => "Home",
         "About" => "About",
         "Services" => "Services",
+        "future" => "future",
         "Portfolio" => "Portfolio",
         "Contact" => "Contact",
         "language" => "language",

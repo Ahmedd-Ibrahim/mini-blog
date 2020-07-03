@@ -54,9 +54,10 @@
         <ul>
         <li class="active"><a href="{{url('index')}}">{{__('header.Home')}}</a></li>
         <li><a href="{{url('about')}}">{{__('header.About')}}</a></li>
-          <li><a href="{{url('index')}}">{{__('header.Services')}}</a></li>
+        <li><a href="{{'index'}}">{{__('header.Services')}}</a></li>
+          <li><a href="{{url('future')}}">{{__('header.future')}}</a></li>
           <li><a href="{{url('portfolio')}}">{{__('header.Portfolio')}}</a></li>
-        <li><a href="{{url('index')}}">{{__('header.Team')}}</a></li>
+        <li><a href="{{'index'}}">{{__('header.Team')}}</a></li>
           <li class="drop-down"><a href="">{{__('header.Drop Down')}}</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>

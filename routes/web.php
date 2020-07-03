@@ -33,6 +33,7 @@ Route::group([
     Route::get('blog','blogController@blog');
     Route::get('blog/post','blogController@post');
     Route::get('tester','indexController@homePage');
+    Route::get('future','indexController@future');
 
 
 

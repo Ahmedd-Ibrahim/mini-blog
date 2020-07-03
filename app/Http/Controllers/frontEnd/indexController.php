@@ -18,13 +18,15 @@ class indexController extends Controller
     public function portfolio(){
         return view('frontend.portfolio');
     }
+    public function future(){
+        return view('frontend.future');
+    }
 
     public function contact(){
         return view('frontend.contact');
     }
 
     public function about(){
-
 
 
         return view('frontend.about');

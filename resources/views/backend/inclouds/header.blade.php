@@ -44,7 +44,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Admin <sup>Panel</sup></div>
       </a>
 
       <!-- Divider -->
@@ -119,7 +119,7 @@
 
 
       <!-- Nav Item - Charts -->
-    
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
