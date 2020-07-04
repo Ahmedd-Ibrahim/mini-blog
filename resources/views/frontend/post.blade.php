@@ -1,4 +1,4 @@
-@extends('frontend\inclouds\master')
+@extends('frontend.inclouds.master')
 @section('content')
 @section('title','contact')
 
@@ -56,7 +56,7 @@
                             <p>En 2014, el estadio fue remodelado y el año pasado reabrió sus puertas. </p>
                             <p>De acuerdo con el diario inglés The Guardian, entre las renovaciones están nuevos vestuarios, equipo de fisioterapia, salas de juntas y un centro de medios.  </p>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>

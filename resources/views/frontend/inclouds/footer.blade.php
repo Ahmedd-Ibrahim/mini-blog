@@ -51,9 +51,7 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+
 
           </div>
 
@@ -74,21 +72,20 @@
       </div>
     </div>
   </footer><!-- End Footer -->
-
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('vendor/jquery-easing/jquery-easing.min.js')}}"></script>
-<script src="{{asset('vendor/php-email-form/validate.js')}}"></script>
-<script src="{{asset('vendor/waypoints/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('vendor/counterup/counterup.min.js')}}"></script>
-<script src="{{asset('vendor/venobox/venobox.min.js')}}"></script>
-<script src="{{asset('vendor/owl.carousel/owl.carousel.min.js')}}"></script>
-<script src="{{asset('vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('vendor/aos/aos.js')}}"></script>
+<script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/jquery-easing/jquery-easing.min.js')}}"></script>
+<script src="{{asset('assets/php-email-form/validate.js')}}"></script>
+<script src="{{asset('assets/waypoints/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('assets/counterup/counterup.min.js')}}"></script>
+<script src="{{asset('assets/venobox/venobox.min.js')}}"></script>
+<script src="{{asset('assets/owl.carousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('assets/aos/aos.js')}}"></script>
 <!-- Template Main JS File -->
 <script src="{{asset('frontend/assets/js/main.js')}}"></script>
 </body>

@@ -1,4 +1,4 @@
-@extends('backend\inclouds\master')
+@extends('backend.inclouds.master')
 @section('content')
 
 
@@ -54,7 +54,7 @@
             </div>
             @enderror
           </div>
-         
+
 
           <button type="submit" class="btn btn-primary">Save!</button>
         <a href="{{url('admin/about')}}" class="btn btn-primary">back To about</a>

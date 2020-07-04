@@ -1,4 +1,4 @@
-@extends('frontend\inclouds\master')
+@extends('frontend.inclouds.master')
 @section('content')
 <div class="nav-fix"></div>
 @section('title','ABOUT US')

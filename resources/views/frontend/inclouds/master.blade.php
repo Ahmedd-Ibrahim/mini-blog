@@ -1,5 +1,5 @@
-@include('frontend\inclouds\header')
+@include('frontend.inclouds.header')
 
 @yield('content')
 
-@include('frontend\inclouds\footer')
+@include('frontend.inclouds.footer')

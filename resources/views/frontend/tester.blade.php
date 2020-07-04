@@ -1,4 +1,4 @@
-@extends('frontend\inclouds\master')
+@extends('frontend.inclouds.master')
 @section('content')
   <!-- ======= Hero Section ======= -->
   <section id="hero">

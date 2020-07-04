@@ -14,10 +14,10 @@
   <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{asset('vendor/jquery/jquery.min.js')}}" rel="stylesheet" type="text/javascript">
-  <link href="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" type="text/javascript">
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('assets/jquery/jquery.min.js')}}" rel="stylesheet" type="text/javascript">
+  <link href="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" type="text/javascript">
+  <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('assets/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
 <link href="{{url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')}}" rel="stylesheet">
 

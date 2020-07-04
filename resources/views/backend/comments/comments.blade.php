@@ -1,4 +1,4 @@
-@extends('backend\inclouds\master')
+@extends('backend.inclouds.master')
 @section('content')
 
 

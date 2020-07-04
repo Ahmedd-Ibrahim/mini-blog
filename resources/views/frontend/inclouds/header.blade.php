@@ -23,16 +23,16 @@
 <link href="{{url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i')}}" rel="stylesheet">
   <!-- Vendor CSS Files -->
 
-<link href="{{asset('vendor/icofont/icofont.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/venobox/venobox.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"  id="bootstrap-css">
-<script src="{{asset('vendor/jquery/jquery.min.js')}}" rel="stylesheet" > </script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" > </script>
+<link href="{{asset('assets/icofont/icofont.min.css')}}" rel="stylesheet">
+<link href="{{asset('assets/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+<link href="{{asset('assets/venobox/venobox.css')}}" rel="stylesheet">
+<link href="{{asset('assets/remixicon/remixicon.css')}}" rel="stylesheet">
+<link href="{{asset('assets/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+<link href="{{asset('assets/aos/aos.css')}}" rel="stylesheet">
+<link href="{{asset('assets/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+<link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"  id="bootstrap-css">
+<script src="{{asset('assets/jquery/jquery.min.js')}}" rel="stylesheet" > </script>
+<script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" > </script>
   <!-- Template Main CSS File -->
 
 

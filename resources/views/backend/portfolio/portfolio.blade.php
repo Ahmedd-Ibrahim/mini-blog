@@ -1,12 +1,10 @@
-@extends('backend\inclouds\master')
+@extends('backend.inclouds.master')
 @section('content')
 
           <!-- Begin Page Content -->
  <div class="container-fluid">
-
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Portfolio</h1>
-
     <div class="row">
       <div class="col-lg-12">
         <div class="card shadow mb-4">
@@ -37,8 +35,6 @@
                                       <div class="mybutton">
                                         <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}' href="#"><button class="btn btn-danger"> delete <i class="fas fa-trash-alt"></i></button></a>
                                         <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" ><button class="btn btn-info"> Edit <i class="fas fa-edit"></i></button></a>
-
-
                                       </div>
                                     </div>
                                 </div>
@@ -64,31 +60,6 @@
                 </div>
 
 
-
-{{--
-            @foreach ($Portfolios as $Portfolio)
-            <div class="my-2"></div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="mycategory">
-                        <a href="#" class="btn btn-success btn-icon-split">
-                            <span class="icon text-white-50">
-                              <i class="fas fa-check"></i>
-                            </span>
-                            <span class="text">{{$Portfolio->name}}</span>
-                          </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="mybutton">
-                        <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}'  href="#" class="btn btn-danger " type="button">Delete <i class="fas fa-trash-alt"></i></a>
-                        <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" class="btn btn-info">Edit <i class="fas fa-edit"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
- --}}
 
             <div class="my-2"></div>
 

@@ -1,4 +1,4 @@
-@extends('backend\inclouds\master')
+@extends('backend.inclouds.master')
 @section('content')
 
           <!-- Begin Page Content -->
@@ -63,7 +63,7 @@
                     <label for="inputPassword4">socail</label>
                     <input type="file" class="form-control" id="inputPassword4" placeholder="upload photo" name="photo">
                   </div>
-              
+
                 @error('photo')
                 <div class="clearFix"></div>
                 <div class="alert alert-danger" role="alert">
