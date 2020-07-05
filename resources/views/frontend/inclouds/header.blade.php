@@ -54,14 +54,15 @@
         <ul>
         <li class="active"><a href="{{url('index')}}">{{__('header.Home')}}</a></li>
         <li><a href="{{url('about')}}">{{__('header.About')}}</a></li>
-        <li><a href="{{'index'}}">{{__('header.Services')}}</a></li>
+
           <li><a href="{{url('future')}}">{{__('header.future')}}</a></li>
-          <li><a href="{{url('portfolio')}}">{{__('header.Portfolio')}}</a></li>
-        <li><a href="{{'index'}}">{{__('header.Team')}}</a></li>
-          <li class="drop-down"><a href="">{{__('header.Drop Down')}}</a>
+          <li><a href="{{url('portfolio')}}">{{__('Our custmoer')}}</a></li>
+
+          <li class="drop-down"><a>{{__('header.Services')}}</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
+                <li><a href="{{'services'}}">{{__('Our Services')}}</a></li>
+              <li><a href="#">Translation</a></li>
+              <li class="drop-down"><a href="#">Services translation</a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>

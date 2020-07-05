@@ -15,6 +15,9 @@ class indexController extends Controller
         return view('frontend.index',['team'=>$team]);
         // return view('frontend.tester',['team'=>$team]);
     }
+    public function services(){
+        return view('frontend.services');
+    }
     public function portfolio(){
         return view('frontend.portfolio');
     }

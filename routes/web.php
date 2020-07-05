@@ -34,6 +34,7 @@ Route::group([
     Route::get('blog/post','blogController@post');
     Route::get('tester','indexController@homePage');
     Route::get('future','indexController@future');
+    Route::get('services','indexController@services');
 
 
 

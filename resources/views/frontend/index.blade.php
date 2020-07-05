@@ -52,63 +52,95 @@
       </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Check our Services</p>
+
+ <!-- ======= About Section ======= -->
+ <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-end">
+        <div class="col-lg-11">
+          <div class="row justify-content-end">
+
+            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="icofont-simple-smile"></i>
+                <span data-toggle="counter-up">65</span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="icofont-document-folder"></i>
+                <span data-toggle="counter-up">85</span>
+                <p>Projects</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="icofont-clock-time"></i>
+                <span data-toggle="counter-up">12</span>
+                <p>Years of experience</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+              <div class="count-box">
+                <i class="icofont-award"></i>
+                <span data-toggle="counter-up">15</span>
+                <p>Awards</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+        <img src="{{asset('frontend/assets/img/about.jpg')}}" class="img-fluid" alt="">
+          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-md-6">
-            <div class="icon-box">
-              <i class="icofont-computer"></i>
-              <h4><a href="#">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-chart-bar-graph"></i>
-              <h4><a href="#">Dolor Sitema</a></h4>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-image"></i>
-              <h4><a href="#">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-settings"></i>
-              <h4><a href="#">Nemo Enim</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-earth"></i>
-              <h4><a href="#">Magni Dolore</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="icofont-tasks-alt"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4>
-              <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
+        <div class="col-lg-6 pt-3 pt-lg-0 content">
+          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <p class="font-italic">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua.
+          </p>
+          <ul>
+            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+            <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
+            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+          </ul>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum
+          </p>
         </div>
 
       </div>
-    </section><!-- End Services Section -->
 
+    </div>
+  </section>
+
+
+  <!-- End About Section -->
+
+
+
+
+
+
+
+
+  
+{{--
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container" data-aos="zoom-in">
@@ -173,10 +205,10 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End Testimonials Section --> --}}
 
 
-
+{{--
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
@@ -239,7 +271,7 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Team Section --> --}}
 
 
   </main><!-- End #main -->
