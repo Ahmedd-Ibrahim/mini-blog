@@ -15,9 +15,9 @@
 
   <!-- Custom fonts for this template-->
   <!-- Include stylesheet -->
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <link href="{{asset('assets/jquery/jquery.min.js')}}" rel="stylesheet" type="text/javascript">
-  <link href="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" type="text/javascript">
+  {{-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> --}}
+  {{-- <link href="{{asset('assets/jquery/jquery.min.js')}}" rel="stylesheet" type="text/javascript"> --}}
+  {{-- <link href="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" type="text/javascript"> --}}
   <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{asset('assets/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
@@ -25,11 +25,9 @@
 
   <!-- Custom styles for this template-->
 <link href="{{asset('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
-
 <!------ Include the above in your HEAD tag ---------->
 <link href="{{asset('backend/css/backend.css')}}" rel="stylesheet">
-
+<link rel="stylesheet" href="{{asset('css/styles.css')}}">
 
 </head>
 
@@ -100,8 +98,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom posts:</h6>
-            <a class="collapse-item" href="{{url('admin/posts')}}">Add New Post  </a>
-          <a class="collapse-item" href="{{url('admin/mangePosts')}}">Your posts</a>
+            <a class="collapse-item" href="{{url('admin/posts/create')}}">Add New Post  </a>
+          <a class="collapse-item" href="{{url('admin/posts')}}">Your posts</a>
           <a class="collapse-item" href="{{url('admin/comments')}}">Comments</a>
 
           </div>
@@ -299,17 +297,17 @@
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{url('admin/posts')}}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
+                    Posts
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{{url('admin/categories')}}">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
+                    Categories
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{{url('admin/tags')}}">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
+                    Tags
                   </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

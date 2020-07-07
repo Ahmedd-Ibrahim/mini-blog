@@ -1,6 +1,5 @@
 @extends('backend.newBlog.main')
 
-
 @section('title', "| $tag->name Tag")
 
 @section('content')

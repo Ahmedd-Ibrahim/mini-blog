@@ -1,6 +1,5 @@
 @extends('backend.newBlog.main')
 
-
 @section('title', '| Edit Blog Post')
 
 @section('stylesheets')
@@ -71,7 +70,7 @@
 
 	<script type="text/javascript">
 
-		// $('.select2-multi').select2();
+		$('.select2-multi').select2();
 		$('.select2-multi').select2().val({!! json_encode($post->tags()->allRelatedIds()) !!}).trigger('change');
 
 	</script>

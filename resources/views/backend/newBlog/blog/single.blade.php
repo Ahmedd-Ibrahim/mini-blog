@@ -1,5 +1,4 @@
 @extends('backend.newBlog.main')
-
 <?php $titleTag = htmlspecialchars($post->title); ?>
 @section('title', "| $titleTag")
 

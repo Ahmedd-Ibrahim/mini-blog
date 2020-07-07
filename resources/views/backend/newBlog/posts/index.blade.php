@@ -1,16 +1,15 @@
-@extends('backend.newBlog.main')
-
+{{-- @extends('backend.newBlog.main') --}}
+@extends('backend.inclouds.master')
 @section('title', '| All Posts')
 
 @section('content')
-
+<div class="container">
 	<div class="row">
 		<div class="col-md-10">
 			<h1>All Posts</h1>
 		</div>
-
 		<div class="col-md-2">
-			<a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Post</a>
+			<a href="{{ route('posts.create') }}" class="btn  btn-primary">Create New Post</a>
 		</div>
 		<div class="col-md-12">
 			<hr>
@@ -37,7 +36,7 @@
 							<td>{{ $post->title }}</td>
 							<td>{{ substr(strip_tags($post->body), 0, 50) }}{{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}</td>
 							<td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
-							<td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default btn-sm">Edit</a></td>
+							<td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">Edit</a></td>
 						</tr>
 
 					@endforeach
@@ -50,5 +49,5 @@
 			</div>
 		</div>
 	</div>
-
-@stop
+</div>
+@endsection

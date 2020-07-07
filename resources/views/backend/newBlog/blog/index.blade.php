@@ -1,5 +1,4 @@
 @extends('backend.newBlog.main')
-
 @section('title', '| Blog')
 
 @section('content')

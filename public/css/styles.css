@@ -19,12 +19,12 @@
 
 .author-name {
 	float: left;
-	margin-left: 15px; 
+	margin-left: 15px;
 }
 
 .author-name>h4 {
 	margin: 5px 0px;
-	
+
 }
 
 .author-time {
@@ -47,3 +47,19 @@
 .comments-title>span {
 	margin-right: 15px;
 }
+
+/* genral touch */
+.navbar-default{
+    background-color: #4e73df;
+}
+.navbar-default .navbar-header a{
+    color: #FFF;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color:#d0c3c3
+}
+/* End genral touch */

@@ -1,6 +1,5 @@
 @extends('backend.newBlog.main')
 
-
 @section('title', '| Create New Post')
 
 @section('stylesheets')
