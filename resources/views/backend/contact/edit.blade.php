@@ -22,11 +22,21 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputEmail4">address</label>
-            <input type="text" class="form-control @error('address') is-invalid @enderror" id="name" placeholder="address" name="address" value="{{$edit->address}}">
+              <label for="inputEmail4">English address</label>
+            <input type="text" class="form-control @error('address_en') is-invalid @enderror" id="name" placeholder="English Adress" name="address_en" value="{{$edit->address_en}}">
             </div>
 
-            @error('address')
+            @error('address_en')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+            <div class="form-group col-md-12">
+              <label for="inputEmail4">Arabic address</label>
+            <input type="text" class="form-control @error('address_ar') is-invalid @enderror" id="name" placeholder="Arabic Adress" name="address_ar" value="{{$edit->address_ar}}">
+            </div>
+            @error('address_ar')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
               {{$message}}

@@ -16,9 +16,9 @@ class About extends Migration
         //
         Schema::create('about', function (Blueprint $table) {
             $table->integer('id')->unique()->autoIncrement();
-            $table->string('name');
+            $table->string('name_en',255);
             $table->string('photo');
-            $table->string('discription');
+            $table->string('discription_en');
             $table->rememberToken();
             $table->timestamps();
         });

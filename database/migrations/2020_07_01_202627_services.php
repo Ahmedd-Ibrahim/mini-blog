@@ -16,9 +16,9 @@ class Services extends Migration
         //
         Schema::create('services', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('name');
+            $table->string('name_en');
             $table->string('photo');
-            $table->string('discription');
+            $table->string('discription_en');
             $table->rememberToken();
             $table->timestamps();
         });

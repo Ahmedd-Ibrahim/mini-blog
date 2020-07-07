@@ -22,8 +22,8 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputEmail4">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name" value="{{$edit['name']}}">
+              <label for="inputEmail4">title</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name_en" value="{{$edit->name_en}}">
             </div>
 
             @error('name')
@@ -33,16 +33,40 @@
             </div>
             @enderror
             <div class="form-group col-md-12">
-              <label for="inputPassword4">Discription</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription" value="{{$edit->discription}}">
+              <label for="inputEmail4">title In arabic</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name_ar" value="{{$edit->name_ar}}">
             </div>
 
-            @error('discription')
+            @error('name_ar')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
               {{$message}}
             </div>
             @enderror
+
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">Discription</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="discription in english" name="discription_en" value="{{$edit->discription_en}}">
+            </div>
+
+            @error('discription_en')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">Discription In arabic</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="discription in arabic" name="discription_ar" value="{{$edit->discription_ar}}">
+            </div>
+
+            @error('discription_ar')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+
             <div class="form-group col-md-12">
               <label for="inputPassword4">this is photo</label>
             <input type="file" class="form-control" id="inputPassword4" placeholder="photo" name="photo">
@@ -54,14 +78,7 @@
             </div>
             @enderror
           </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Active ?
-              </label>
-            </div>
-          </div>
+         
 
           <button type="submit" class="btn btn-primary">Save!</button>
         <a href="{{url('admin/services')}}" class="btn btn-primary">back To services</a>

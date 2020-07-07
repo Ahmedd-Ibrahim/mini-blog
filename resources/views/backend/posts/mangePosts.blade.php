@@ -4,11 +4,7 @@
           <!-- Begin Page Content -->
  <div class="container-fluid mange_posts">
 
-
-
     <div class="row">
-
-
 
       <div class="col-lg-12">
         <div class="card shadow mb-4">
@@ -16,15 +12,10 @@
             <h6 class="m-0 font-weight-bold text-primary text-center">Your Posts</h6>
           </div>
           <div class="card-body">
-
-
-
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                       <h5 class="mb-0">
-
-
 
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#static" aria-expanded="false" aria-controls="collapseTwo">
                           Static Post Your Title Will be here #1
@@ -70,9 +61,6 @@
                     </div>
                   </div>
                 </div>
-
-
-
 
 
 

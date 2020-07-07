@@ -46,7 +46,7 @@
                             <div class="card-header py-3">
                                 <div class="header-box">
                                     <div class="row">
-                                        <div class="col-md-6">{{$services->name}}</div>
+                                        <div class="col-md-6">{{$services->name_en}}</div>
                                         <div class="col-md-6">
 
                                           <div class="mybutton">
@@ -70,17 +70,13 @@
                                     <div class="col-md-9">
                                         {{-- discripton --}}
                                         <div class="discription-box">
-                                            {{$services->discription}}
+                                            {{$services->discription_en}}
                                         </div>
                                     </div>
                                      </div>
                             </div>
                             </div>
                     </div>
-
-
-
-
  <!-- Delete services Modal-->
  <div class="modal fade" id="category{{$services->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

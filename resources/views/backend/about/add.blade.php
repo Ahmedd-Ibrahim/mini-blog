@@ -28,19 +28,45 @@
                 @csrf
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name">
+                    <label for="inputEmail4">English Title</label>
+                    <input type="text" class="form-control @error('name_en') is-invalid @enderror" id="name_en" placeholder="English title" name="name_en">
                   </div>
-                  @error('name')
+                  @error('name_en')
                   <div class="clearFix"></div>
                   <div class="alert alert-danger" role="alert">
                     {{$message}}
                   </div>
                   @enderror
                   <div class="form-group col-md-12">
-                    <label for="inputPassword4">Discription</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription">
+                    <label for="inputEmail4">Arabic Title</label>
+                    <input type="text" class="form-control @error('name_ar') is-invalid @enderror" id="name_ar" placeholder="Arabic title" name="name_ar">
                   </div>
+                  @error('name_ar')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">English Discription</label>
+                    <input type="text" class="form-control @error('discription_en') is-invalid @enderror" id="inputPassword4" placeholder="English discription" name="discription_en">
+                  </div>
+                  @error('discription_en')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">Arabic Discription</label>
+                    <input type="text" class="form-control @error('discription_r') is-invalid @enderror" id="inputPassword4" placeholder="Arabic discription" name="discription_ar">
+                  </div>
+                  @error('discription_ar')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
                   <div class="form-group col-md-12">
                     <label for="inputPassword4">photo</label>
                     <input type="file" class="form-control" id="inputPassword4" placeholder="photo" name="photo">

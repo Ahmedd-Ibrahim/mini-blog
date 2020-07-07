@@ -22,21 +22,25 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputEmail4">Title</label>
+              <label for="title">Title</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="name" placeholder="title" name="title" value="{{$edit->title}}">
             </div>
-
             @error('title')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
               {{$message}}
             </div>
             @enderror
-            {{-- <div class="form-group col-md-12">
-              <label for="inputPassword4">Content</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" id="inputPassword4" placeholder="Content" name="content" value="{{$edit->content}}">
-            </div> --}}
-
+            <div class="form-group col-md-12">
+              <label for="photo">Post photo</label>
+            <input type="file" class="form-control @error('photo') is-invalid @enderror" id="name" placeholder="photo" name="photo" value="{{$edit->photo}}">
+            </div>
+            @error('photo')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
             <div class="col-lg-12">
                 <div class="form-group">
                   <label>Your New Post Content</label>
@@ -49,10 +53,7 @@
               {{$message}}
             </div>
             @enderror
-
           </div>
-
-
           <button type="submit" class="btn btn-primary">Save!</button>
         <a href="{{url('admin/posts')}}" class="btn btn-primary">back To posts</a>
         </form>

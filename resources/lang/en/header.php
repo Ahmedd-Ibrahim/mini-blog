@@ -3,7 +3,6 @@
 
 return [
 
-
         "Home" => "Home",
         "About" => "About",
         "Services" => "Services",
@@ -14,6 +13,10 @@ return [
         "Team" => "Team",
         "Drop Down" => "Drop Down",
         "Dewi"=>"Dewi",
+        "Our custmoer"=>"Our custmoer",
+        "blog"  => "blog",
+        "Amr M.c" => "Amr M.c",
+        'Translation' =>'Translation',
 
 ];
 

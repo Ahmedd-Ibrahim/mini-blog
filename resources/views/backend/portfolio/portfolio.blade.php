@@ -4,12 +4,12 @@
           <!-- Begin Page Content -->
  <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Portfolio</h1>
+    <h1 class="h3 mb-4 text-gray-800">Our custmoer</h1>
     <div class="row">
       <div class="col-lg-12">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <a href="{{url('admin/portfolio/add')}}"  class="m-0 font-weight-bold btn btn-primary">Add New portFolio</a>
+            <a href="{{url('admin/portfolio/add')}}"  class="m-0 font-weight-bold btn btn-primary">Add New custmoer</a>
           </div>
           <div class="card-body">
               @error('delete-error')
@@ -29,9 +29,8 @@
                         <div class="card-header py-3">
                             <div class="header-box">
                                 <div class="row">
-                                    <div class="col-md-6">{{$Portfolio->name}}</div>
+                                    <div class="col-md-6">{{$Portfolio->name_en}}</div>
                                     <div class="col-md-6">
-
                                       <div class="mybutton">
                                         <a data-toggle="modal"  data-target='#category{{$Portfolio->id}}' href="#"><button class="btn btn-danger"> delete <i class="fas fa-trash-alt"></i></button></a>
                                         <a href="{{url('admin/portfolio/edit/'.$Portfolio->id)}}" ><button class="btn btn-info"> Edit <i class="fas fa-edit"></i></button></a>
@@ -51,7 +50,7 @@
                                 <div class="col-md-9">
                                     {{-- discripton --}}
                                     <div class="discription-box">
-                                        {{$Portfolio->discription}}
+                                        {{$Portfolio->discription_en}}
                                     </div>
                                 </div>
                                  </div>

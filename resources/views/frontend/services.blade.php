@@ -1,16 +1,7 @@
 @extends('frontend.inclouds.master')
 @section('content')
 <div class="nav-fix"></div>
-@section('title','ABOUT US')
-
-
-
-
-
-
-
-
-
+@section('title','Services')
 
   <!-- ======= Services Section ======= -->
   <section id="services" class="services section-bg">

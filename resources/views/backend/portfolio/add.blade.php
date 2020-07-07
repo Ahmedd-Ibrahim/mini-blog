@@ -27,20 +27,40 @@
                 @csrf
                 <div class="form-row">
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name">
+                    <label for="inputEmail4">English Title </label>
+                    <input type="text" class="form-control @error('name_en') is-invalid @enderror" id="name_en" placeholder="English Title" name="name_en">
                   </div>
-                  @error('name')
+                  @error('name_en')
                   <div class="clearFix"></div>
                   <div class="alert alert-danger" role="alert">
                     {{$message}}
                   </div>
                   @enderror
                   <div class="form-group col-md-12">
-                    <label for="inputPassword4">Discription</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription">
+                    <label for="inputEmail4">Arabic Title</label>
+                    <input type="text" class="form-control @error('name_ar') is-invalid @enderror" id="name" placeholder="Arabic Title" name="name_ar">
                   </div>
-                  @error('discription')
+                  @error('name_ar')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">English Discription</label>
+                    <input type="text" class="form-control @error('discription_en') is-invalid @enderror" id="inputPassword4" placeholder="English discription" name="discription_en">
+                  </div>
+                  @error('discription_en')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">Arabic Discription</label>
+                    <input type="text" class="form-control @error('discription_ar') is-invalid @enderror" id="inputPassword4" placeholder="Arabic discription" name="discription_ar">
+                  </div>
+                  @error('discription_ar')
                   <div class="clearFix"></div>
                   <div class="alert alert-danger" role="alert">
                     {{$message}}
@@ -48,9 +68,9 @@
                   @enderror
                   <div class="form-group col-md-12">
                     <label for="inputPassword4">Link Social</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="link" name="link">
+                    <input type="text" class="form-control  @error('link') is-invalid @enderror" id="inputPassword4" placeholder="link" name="link">
                   </div>
-                  @error('discription')
+                  @error('link')
                   <div class="clearFix"></div>
                   <div class="alert alert-danger" role="alert">
                     {{$message}}
@@ -67,14 +87,7 @@
                   </div>
                   @enderror
                 </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Active ?
-                    </label>
-                  </div>
-                </div>
+
                 <button type="submit" class="btn btn-primary">Save!</button>
               </form>
           </div>

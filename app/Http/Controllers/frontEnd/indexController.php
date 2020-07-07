@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\frontEnd;
 
 use App\Http\Controllers\Controller;
+use App\model\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\model\team;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class indexController extends Controller
 {
@@ -16,7 +18,10 @@ class indexController extends Controller
         // return view('frontend.tester',['team'=>$team]);
     }
     public function services(){
-        return view('frontend.services');
+       $services = Services::select('id',
+       'name_'.LaravelLocalization::getCurrentLocale().' as name')
+       ->get();
+        return view('frontend.services',['services'=>$services]);
     }
     public function portfolio(){
         return view('frontend.portfolio');

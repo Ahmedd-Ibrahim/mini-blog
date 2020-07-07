@@ -4,13 +4,14 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class posts extends Model
+class posts_en extends Model
 {
     //
-    protected $table = "posts";
+    protected $table = 'posts_en';
+
 
     protected $fillable = [
-        'title', 'content',
+        'id','title', 'content','photo',
     ];
 
     /**
@@ -22,3 +23,4 @@ class posts extends Model
          'remember_token',
     ];
 }
+

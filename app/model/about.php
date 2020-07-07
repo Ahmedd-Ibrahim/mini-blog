@@ -17,7 +17,7 @@ class about extends Model
      */
 
     protected $fillable = [
-        'name', 'photo', 'discription',
+        'name_en', 'photo', 'discription_en','name_ar','discription_ar',
     ];
 
     /**

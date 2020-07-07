@@ -12,10 +12,13 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "mcamara/laravel-localization": "^1.5"
+        "laravelcollective/html": "^6.1",
+        "mcamara/laravel-localization": "^1.5",
+        "mews/purifier": "^3.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -62,4 +65,5 @@
             "@php artisan key:generate --ansi"
         ]
     }
+
 }

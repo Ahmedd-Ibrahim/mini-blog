@@ -3,6 +3,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+    
     <h1>{{__('index.Plan. Launch. Grow.')}}</h1>
     <h2>{{__('index.We are team of talanted designers making websites with Bootstrap')}}</h2>
       <div class="d-flex">
@@ -139,7 +140,7 @@
 
 
 
-  
+
 {{--
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">

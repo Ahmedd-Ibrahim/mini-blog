@@ -11,7 +11,6 @@ class contactController extends Controller
 {
     //
     public function index(){   // show contact
-
         $contacts = contact::get();
         return view('backend.contact.contact',['contacts'=>$contacts]);
     }
@@ -21,23 +20,19 @@ class contactController extends Controller
 
         // valdete data before insert
 
-
-        $valedator = Validator::make($request->all(),[
-            'address' => 'required | min:3 ',
+        $valedator = $request->validate([
+            'address_en' => 'required | min:3 ',
+            'address_ar' => 'required | min:3 ',
             'email' => 'required | min:3 ',
             'phone' => 'required ',
         ]);
-        if($valedator -> fails()){
 
-
-            return redirect()->back()->withErrors($valedator)->withInputs($request->all());
-        }
         // insert data and redirect
-      
         contact::create([
-            'address'           => $request->address,
-            'email'  => $request->email,
-            'phone' => $request->phone
+            'address_en'           => $request->address_en,
+            'address_ar'           => $request->address_ar,
+            'email'                => $request->email,
+            'phone'                => $request->phone
         ]);
         return redirect('admin/contact')->with(['added'=> 'success added Your Category']);
             }
@@ -71,6 +66,12 @@ public function update(Request $request , $contact_id ){
 
     $myCat = contact::find($contact_id);
 
+    $valedator = $request->validate([
+        'address_en' => 'required | min:3 ',
+        'address_ar' => 'required | min:3 ',
+        'email' => 'required | min:3 ',
+        'phone' => 'required ',
+    ]);
     if(!$myCat){
         return redirect()->back();
     }

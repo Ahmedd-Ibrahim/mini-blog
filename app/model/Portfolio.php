@@ -21,7 +21,7 @@ class Portfolio extends Model
      */
 
     protected $fillable = [
-        'name', 'photo', 'discription','link',
+        'name_en', 'photo', 'discription_en','link','name_ar','discription_ar',
     ];
 
     /**

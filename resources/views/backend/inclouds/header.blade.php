@@ -14,6 +14,8 @@
   <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
+  <!-- Include stylesheet -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link href="{{asset('assets/jquery/jquery.min.js')}}" rel="stylesheet" type="text/javascript">
   <link href="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" rel="stylesheet" type="text/javascript">
   <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -69,7 +71,6 @@
       <div class="sidebar-heading">
         Interface
       </div>
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -82,7 +83,7 @@
 
           <a class="collapse-item" href="{{url('admin/pages')}}">pages</a>
           <a class="collapse-item" href="{{url('admin/services')}}">Services Settings</a>
-          <a class="collapse-item" href="{{url('admin/portfolio')}}">portfolio Settings</a>
+          <a class="collapse-item" href="{{url('admin/portfolio')}}">Custmoer Settings</a>
           <a class="collapse-item" href="{{url('admin/about')}}">About Settings</a>
           <a class="collapse-item" href="{{url('admin/contact')}}">Contact Settings</a>
           <a class="collapse-item" href="{{url('admin/team')}}">team Settings</a>

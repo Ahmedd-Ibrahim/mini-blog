@@ -34,7 +34,7 @@
                         <div class="card-header py-3">
                             <div class="header-box">
                                 <div class="row">
-                                    <div class="col-md-6">{{$about->name}}</div>
+                                    <div class="col-md-6">{{$about->name_en}}</div>
                                     <div class="col-md-6">
 
                                       <div class="mybutton">
@@ -58,7 +58,7 @@
                                 <div class="col-md-9">
                                     {{-- discripton --}}
                                     <div class="discription-box">
-                                        {{$about->discription}}
+                                        {{$about->discription_en}}
                                     </div>
                                 </div>
                                  </div>

@@ -79,16 +79,37 @@ Route::group(['prefix' => 'admin','namespace'=>'backend','middleware'=>'auth'], 
     // #### End team route
     //###### posts route
     Route::group(['namespace'=>'blog'],function(){
-    Route::get('mangePosts','postsController@mangePosts');  //  mange blog posts
-    Route::get('posts','postsController@index');  // add blog post
-    Route::post('posts/save','postsController@save');  // insert blog post
-    Route::any('posts/delete/{posts}','postsController@delete');  // Delete post
-    Route::get('posts/edit/{posts}','postsController@edit');  // Edit post
-    Route::post('posts/update/{posts}','postsController@update');  // update post
+
+    // Route::get('mangePosts','postsController@mangePosts');  //  mange blog posts
+    // Route::get('posts','postsController@index');  // add blog post
+    // Route::post('posts/save','postsController@save');  // insert blog post
+    // Route::any('posts/delete/{posts}','postsController@delete');  // Delete post
+    // Route::get('posts/edit/{posts}','postsController@edit');  // Edit post
+    // Route::post('posts/update/{posts}','postsController@update');  // update post
+
+    Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+    Route::resource('tags', 'TagController', ['except' => ['create']]);
+
+    // Comments
+	Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+	Route::get('comments/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
+	Route::put('comments/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
+	Route::delete('comments/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
+	Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
+
+
+	Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
+	Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
+    Route::get('contact', 'PagesController@getContact');
+    Route::post('contact', 'PagesController@postContact');
+	Route::get('about', 'PagesController@getAbout');
+	Route::get('/', 'PagesController@getIndex');
+	Route::resource('posts', 'PostController');
     });
     // #### End posts route
     ###### Comments route
     Route::group(['namespace'=>'blog'],function(){
+
     Route::get('comments','commentsController@index');  //  mange blog posts
 
     });

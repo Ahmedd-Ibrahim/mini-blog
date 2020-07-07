@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\model\Portfolio;
 use Illuminate\Support\Facades\Validator;
 
-
-
 class portfolioController extends Controller
 {
     //
@@ -24,19 +22,15 @@ class portfolioController extends Controller
        // insert categories
        public function save(Request $request){
         // valdete data before insert
-
-
-        $valedator = Validator::make($request->all(),[
-            'name' => 'required | min:3 ',
-            'discription' => 'required | min:3 ',
+        $valedator = $request->validate([
+            'name_en' => 'required | min:3 ',
+            'discription_en' => 'required | min:3 ',
+            'name_ar' => 'required | min:3 ',
+            'discription_ar' => 'required | min:3 ',
             'photo' => 'required ',
             'link' => 'required ',
         ]);
-        if($valedator -> fails()){
 
-
-            return redirect()->back()->withErrors($valedator)->withInputs($request->all());
-        }
         // insert data and redirect
 
         $full_name = time().'.'. $request->photo->getClientOriginalExtension();
@@ -44,8 +38,10 @@ class portfolioController extends Controller
         $full_photo = $move_to.$full_name;
        $request->photo->move($move_to,$full_name);
         Portfolio::create([
-            'name'           => $request->name,
-            'discription'  => $request->discription,
+            'name_en'           => $request->name_en,
+            'discription_en'  => $request->discription_en,
+            'name_ar'           => $request->name_ar,
+            'discription_ar'  => $request->discription_ar,
             'photo' =>   $full_photo ,
             'link' =>   $request->link ,
         ]);
@@ -81,6 +77,15 @@ public function update(Request $request , $Portfolio_id ){
 
     $myCat = portfolio::find($Portfolio_id);
 
+    $valedator = $request->validate([
+        'name_en' => 'required | min:3 ',
+        'discription_en' => 'required | min:3 ',
+        'name_ar' => 'required | min:3 ',
+        'discription_ar' => 'required | min:3 ',
+        'photo' => 'required ',
+        'link' => 'required ',
+    ]);
+
     if(!$myCat){
         return redirect()->back();
     }
@@ -91,10 +96,12 @@ $full_photo = $move_to.$full_name;
 
 $request->photo->move($move_to,$full_name);
 $myCat->update([
-    'name'           => $request->name,
-    'discription'  => $request->discription,
-    'link'  => $request->link,
-    'photo' =>     $full_photo
+    'name_en'         => $request->name_en,
+    'discription_en'  => $request->discription_en,
+    'name_ar'         => $request->name_ar,
+    'discription_ar'  => $request->discription_ar,
+    'link'  =>           $request->link,
+    'photo' =>           $full_photo
 ]);
 return redirect('admin/portfolio')->with(['updated'=> 'success added Your portfolio']);
     }

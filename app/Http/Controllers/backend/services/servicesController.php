@@ -20,22 +20,18 @@ class servicesController extends Controller
         return view('backend.services.add',['servicess'=>$servicess]);
     }
 
-
        // insert categories
        public function save(Request $request){
         // valdete data before insert
         // | string |unique:category,name'
 
-        $valedator = Validator::make($request->all(),[
-            'name' => 'required | min:3 ',
-            'discription' => 'required | min:3 ',
+        $valedator = $request->validate([
+            'name_en' => 'required |min:5 ',
+            'name_ar' => 'required  ',
+            'discription_en' => 'required ',
+            'discription_ar' => 'required  ',
             'photo' => 'required ',
         ]);
-        if($valedator -> fails()){
-            return redirect()->back()->withErrors($valedator)->withInputs($request->all());
-        }
-        // insert data and redirect
-
 
         $full_name = time().'.'. $request->photo->getClientOriginalExtension();
         $move_to = 'imgs/services/';
@@ -43,11 +39,13 @@ class servicesController extends Controller
 
        $request->photo->move($move_to,$full_name);
         services::create([
-            'name'           => $request->name,
-            'discription'  => $request->discription,
+            'name_en'           => $request->name_en,
+            'name_ar'           => $request->name_ar,
+            'discription_ar'  => $request->discription_ar,
+            'discription_en'  => $request->discription_en,
             'photo' =>     $full_photo
         ]);
-        return redirect('admin/services')->with(['added'=> 'success added Your Category']);
+        return redirect('admin/services')->with(['added'=> 'success added Your Service']);
             }
             // Delete
 public function delete($services_id){
@@ -80,6 +78,14 @@ public function update(Request $request , $services_id ){
 
     $myCat = services::find($services_id);
 
+    $valedator = $request->validate([
+        'name_en' => 'required |min:5 ',
+        'name_ar' => 'required  ',
+        'discription_en' => 'required ',
+        'discription_ar' => 'required  ',
+        'photo' => 'required ',
+    ]);
+
     if(!$myCat){
         return redirect()->back();
     }
@@ -90,8 +96,10 @@ $full_photo = $move_to.$full_name;
 
 $request->photo->move($move_to,$full_name);
 $myCat->update([
-    'name'           => $request->name,
-    'discription'  => $request->discription,
+    'name_en'           => $request->name_en,
+    'name_ar'           => $request->name_ar,
+    'discription_en'  => $request->discription_en,
+    'discription_ar'  => $request->discription_ar,
     'photo' =>     $full_photo
 ]);
 return redirect('admin/services')->with(['updated'=> 'success added Your Category']);

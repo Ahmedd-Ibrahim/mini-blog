@@ -70,13 +70,13 @@
                       <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#adress" aria-expanded="false" aria-controls="collapseThree">
-                            Adress
+                            English Adress
                           </button>
                         </h5>
                       </div>
                       <div id="adress" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                         <div class="card-body">
-                         {{$contact->address}}
+                         {{$contact->address_en}}
                         </div>
                       </div>
                     </div>

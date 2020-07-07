@@ -22,30 +22,49 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputEmail4">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" name="name" value="{{$edit['name']}}">
+              <label for="inputEmail4">English Title</label>
+            <input type="text" class="form-control @error('name_en') is-invalid @enderror" id="name" placeholder="English Title" name="name_en" value="{{$edit->name_en}}">
             </div>
-
-            @error('name')
+            @error('name_en')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
               {{$message}}
             </div>
             @enderror
             <div class="form-group col-md-12">
-              <label for="inputPassword4">Discription</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="discription" name="discription" value="{{$edit->discription}}">
+              <label for="inputEmail4">Arabic Title</label>
+            <input type="text" class="form-control @error('name_ar') is-invalid @enderror" id="name" placeholder="arabic Title" name="name_ar" value="{{$edit->name_ar}}">
             </div>
-
-            @error('discription')
+            @error('name_ar')
             <div class="clearFix"></div>
             <div class="alert alert-danger" role="alert">
               {{$message}}
             </div>
             @enderror
             <div class="form-group col-md-12">
-              <label for="inputPassword4">this is photo</label>
-            <input type="file" class="form-control" id="inputPassword4" placeholder="photo" name="photo">
+              <label for="inputPassword4">English Discription</label>
+            <input type="text" class="form-control @error('discription_en') is-invalid @enderror" id="inputPassword4" placeholder="English discription" name="discription_en" value="{{$edit->discription_en}}">
+            </div>
+            @error('discription_en')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">Arabic Discription</label>
+            <input type="text" class="form-control @error('discription_ar') is-invalid @enderror" id="inputPassword4" placeholder="Arabic discription" name="discription_ar" value="{{$edit->discription_ar}}">
+            </div>
+            @error('discription_ar')
+            <div class="clearFix"></div>
+            <div class="alert alert-danger" role="alert">
+              {{$message}}
+            </div>
+            @enderror
+
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">photo</label>
+            <input type="file" class="form-control @error('photo') is-invalid @enderror" id="inputPassword4" placeholder="photo" name="photo">
             </div>
             @error('photo')
             <div class="clearFix"></div>

@@ -26,18 +26,14 @@ class aboutController extends Controller
        public function save(Request $request){
 
         // valdete data before insert
-
-
-        $valedator = Validator::make($request->all(),[
-            'name' => 'required | min:3 ',
-            'discription' => 'required | min:3 ',
+        $valedator = $request->validate([
+            'name_en' => 'required | min:3 ',
+            'discription_en' => 'required | min:3 ',
+            'name_ar' => 'required | min:3 ',
+            'discription_ar' => 'required | min:3 ',
             'photo' => 'required ',
         ]);
-        if($valedator -> fails()){
 
-
-            return redirect()->back()->withErrors($valedator)->withInputs($request->all());
-        }
         // insert data and redirect
 
         $full_name = time().'.'. $request->photo->getClientOriginalExtension();
@@ -45,8 +41,10 @@ class aboutController extends Controller
         $full_photo = $move_to.$full_name;
        $request->photo->move($move_to,$full_name);
         about::create([
-            'name'           => $request->name,
-            'discription'  => $request->discription,
+            'name_en'           => $request->name_en,
+            'discription_en'  => $request->discription_en,
+            'name_ar'           => $request->name_ar,
+            'discription_ar'  => $request->discription_ar,
             'photo' => $full_photo
         ]);
         return redirect('admin/about')->with(['added'=> 'success added Your Category']);
@@ -81,6 +79,13 @@ public function update(Request $request , $about_id ){
 
     $myCat = about::find($about_id);
 
+    $valedator = $request->validate([
+        'name_en' => 'required | min:3 ',
+        'discription_en' => 'required | min:3 ',
+        'name_ar' => 'required | min:3 ',
+        'discription_ar' => 'required | min:3 ',
+        'photo' => 'required ',
+    ]);
     if(!$myCat){
         return redirect()->back();
     }
@@ -91,11 +96,16 @@ $full_photo = $move_to.$full_name;
 
 $request->photo->move($move_to,$full_name);
 $myCat->update([
-    'name'           => $request->name,
-    'discription'  => $request->discription,
+    'name_en'           => $request->name_en,
+    'discription_en'  => $request->discription_en,
+    'name_ar'           => $request->name_ar,
+    'discription_ar'  => $request->discription_ar,
     'photo' =>     $full_photo
 ]);
 return redirect('admin/about')->with(['updated'=> 'success added Your about info']);
     }
 
+ 
 }
+
+

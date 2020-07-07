@@ -17,7 +17,7 @@ class Contact extends Migration
 
         Schema::create('contact', function (Blueprint $table) {
         $table->integer('id')->unique()->autoIncrement();
-        $table->string('address');
+        $table->string('address_en');
         $table->string('email');
         $table->string('phone');
         $table->rememberToken();

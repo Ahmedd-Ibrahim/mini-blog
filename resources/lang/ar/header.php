@@ -15,7 +15,10 @@ return [
         "Team" => "الفريق",
         "Drop Down" => "قائمة",
         "Dewi" => "ديوي",
-
+        "Our custmoer"=>"عملائنا",
+        "blog"  => "المدونه",
+        "Amr M.c"=>"عمرو",
+        'Translation' => 'خدمات الترجمه',
 ];
 
 ?>

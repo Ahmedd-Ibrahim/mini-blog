@@ -16,8 +16,8 @@ class Portfoilo extends Migration
         //
         Schema::create('portfolio', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('name');
-            $table->string('discription');
+            $table->string('name_en');
+            $table->string('discription_en');
             $table->string('link');
             $table->string('photo');
             $table->rememberToken();

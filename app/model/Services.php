@@ -19,7 +19,7 @@ class Services extends Model
      */
 
     protected $fillable = [
-        'name', 'photo', 'discription',
+        'name_en', 'name_ar','photo', 'discription_en','discription_ar',
     ];
 
     /**
@@ -30,5 +30,5 @@ class Services extends Model
     protected $hidden = [
          'remember_token',
     ];
-  
+
 }

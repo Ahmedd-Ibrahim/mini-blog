@@ -2,14 +2,6 @@
 @section('content')
 <div class="nav-fix"></div>
 @section('title','ABOUT US')
- 
-
-
-
-
-
-
-
 
 
 
@@ -25,6 +17,7 @@
               <i class="ri-brush-4-line"></i>
             </div>
             <div class="card-body">
+                
             <h5 class="card-title"><a href="">{{__('about.Our Mission')}}</a></h5>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
             </div>
@@ -38,6 +31,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title"><a href="">Our Plan</a></h5>
+
               <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
             </div>
           </div>
