@@ -6,17 +6,22 @@ use App\Http\Controllers\Controller;
 use App\model\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use App\model\team;
+
+use App\Post;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class indexController extends Controller
 {
     //
     public function homePage(){
-        $team = team::get();
-        return view('frontend.index',['team'=>$team]);
-        // return view('frontend.tester',['team'=>$team]);
+
+        
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
+        $slidePosts = Post::orderBy('id','desc')->paginate(3);
+        return view('frontend.index',compact('posts','slidePosts'));
+
     }
+
     public function services(){
        $services = Services::select('id',
        'name_'.LaravelLocalization::getCurrentLocale().' as name')

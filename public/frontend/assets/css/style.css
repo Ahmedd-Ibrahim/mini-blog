@@ -17,7 +17,11 @@ a {
   color: #ff4a17;
 
 }
-
+/* login */
+.login-btn{
+    width: 100%;
+}
+/* login */
 a:hover {
   color: #ff724a;
   text-decoration: none;
@@ -1700,8 +1704,6 @@ section {
 /************************************* begin blog *******************************************/
 /* Base */
 
-
-
       /* imges blog */
 .blog  h1{
     margin: 20px 0;
@@ -1717,7 +1719,7 @@ section {
 .blog .blog-box{
     margin-top: 20px;
     border-bottom: 1px solid #CCC;
-    height: 190px;
+
     padding-bottom: 10px;
 }
 .blog-box:nth-last-of-type(){
@@ -1756,6 +1758,11 @@ position: relative;
 }
 .blog-box-left .blog-box-block a{
     display: block;
+}
+.blog-box-left .carousel-item .carousel-caption{
+    right: 0;
+    left:0;
+    bottom:16px;
 }
 /************************************ End blog ******************************************** */
 

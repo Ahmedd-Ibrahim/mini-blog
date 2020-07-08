@@ -14,100 +14,94 @@
       <div class="col-lg-8">
 
         <!-- Title -->
-        <h1 class="mt-4">Post Title</h1>
+        <h1 class="mt-4">{{$post->title}}</h1>
 
-        <!-- Author -->
-        <p class="lead">
-          by
-          <a href="#">الهندسة</a>
-        </p>
+
 
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on January 1, 2019 at 12:00 PM</p>
+        <p class="post-time">{{ date('F dS, Y - g:iA' ,strtotime($post->created_at)) }}</p>
 
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+        @if(!empty($post->image))
+				<img src="{{asset('/images/' . $post->image)}}" width="700" height="400" />
+            @endif
+            @if (empty($post->image))
+            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+            @endif
+
 
         <hr>
 
         <!-- Post Content -->
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+        <p>{!! $post->body !!}</p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-        <blockquote class="blockquote">
-          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">Someone famous in
-            <cite title="Source Title">Source Title</cite>
-          </footer>
-        </blockquote>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
+        {{-- End post Content --}}
         <hr>
 
-        <!-- Comments Form -->
-        <div class="card my-4">
-          <h5 class="card-header">Leave a Comment:</h5>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </div>
 
-        <!-- Single Comment -->
-        <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-          <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          </div>
-        </div>
+{{-- Start Comment Section --}}
+<div class="row">
+    <div class="col-md-8 ">
+        <h3 class="comments-title"><i class="fas fa-comment-alt"></i>  {{ $post->comments()->count() . " " }} Comments</h3>
+        @foreach($post->comments as $comment)
+            <div class="comment">
+                <div class="author-info">
 
-        <!-- Comment with nested comments -->
-        <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-          <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=monsterid" }}" class="author-image">
+                    <div class="author-name">
+                        <h4>{{ $comment->name }}</h4>
+                        <p class="author-time">{{ date('F dS, Y - g:iA' ,strtotime($comment->created_at)) }}</p>
+                    </div>
 
-            <div class="media mt-4">
-              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-              <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              </div>
+                </div>
+
+                <div class="comment-content">
+                    {{ $comment->comment }}
+                </div>
+
+            </div>
+        @endforeach
+    </div>
+</div>
+
+<div class="row">
+    <div id="comment-form"  style="margin-top: 50px;">
+        {{ Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) }}
+
+            <div class="row">
+                <div class="col-md-6">
+                    {{ Form::label('name', "Name:") }}
+                    {{ Form::text('name', null, ['class' => 'form-control']) }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ Form::label('email', 'Email:') }}
+                    {{ Form::text('email', null, ['class' => 'form-control']) }}
+                </div>
+
+                <div class="col-md-12">
+                    {{ Form::label('comment', "Comment:") }}
+                    {{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5']) }}
+
+                    {{ Form::submit('Add Comment', ['class' => 'btn btn-primary btn-block', 'style' => 'margin-top:15px;']) }}
+                </div>
             </div>
 
-            <div class="media mt-4">
-              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-              <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+        {{ Form::close() }}
+    </div>
+</div>
+<hr>
+{{-- End comment section --}}
       </div>
 
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 
-        <!-- Search Widget -->
+        {{-- <!-- Search Widget -->
         <div class="card my-4">
           <h5 class="card-header">Search</h5>
           <div class="card-body">
@@ -118,48 +112,35 @@
               </span>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         <!-- Categories Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
-          <div class="card-body">
+          <h5 class="card-header custom-header">Categories</h5>
+          <div class="card-body custom-body">
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Web Design</a>
-                  </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">Freebies</a>
-                  </li>
+                    <li>
+                        Posted In: <span class="category-name">{{ $post->category->name }} </span>
+                    </li>
+
                 </ul>
               </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
-                  </li>
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>
 
         <!-- Side Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+          <h5 class="card-header custom-header">Last Post</h5>
+          <div class="card-body custom-body">
+            <div class="sup-content">
+                <h4>{{ substr(strip_tags($last->title), 0, 20) }}{{ strlen(strip_tags($last->title)) > 20 ? "..." : "" }}</h4>
+            <p>{{ substr(strip_tags($last->body), 0, 100) }}{{ strlen(strip_tags($last->body)) > 100 ? "..." : "" }}</p>
+                <a class="text-center d-block" type="button" href="{{ route('front.blog.single', $last->slug) }}">read more <i class="fas fa-eye"></i></a>
+            </div>
           </div>
         </div>
 

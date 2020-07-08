@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-brand" href="{{url('admin/blog')}}">blog</a>
+    <a class="navbar-brand" href="{{url('index')}}">mostashary</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +17,6 @@
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="{{url('admin/index')}}">Admin panal</a></li>
       <li class="{{ Request::is('blog') ? "active" : "" }}"><a href="{{url('admin/posts')}}">posts</a></li>
-      <li class="{{ Request::is('about') ? "active" : "" }}"><a href="{{url('index')}}">Vist Ypur site</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if (Auth::check())
@@ -29,7 +28,12 @@
             <li><a href="{{ route('categories.index') }}">Categories</a></li>
             <li><a href="{{ route('tags.index') }}">Tags</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="{{ route('logout') }}">Logout</a></li>
+            <li>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+            </li>
           </ul>
         </li>
 

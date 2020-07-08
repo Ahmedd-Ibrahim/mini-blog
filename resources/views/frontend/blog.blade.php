@@ -7,7 +7,9 @@
   <div class="blog">
 <div class="container">
     <h1 >Blog</h1>
-
+@foreach ($posts as $post)
+<P>{{$post->title}}</P>
+@endforeach
     <div class="row">
         <div class="col-md-6">
             <div class="col-md-12">

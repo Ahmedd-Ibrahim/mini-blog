@@ -12,9 +12,7 @@
       </div>
     </div>
   </section><!-- End Hero -->
-
   <main id="main">
-
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
@@ -133,109 +131,93 @@
 
 
 
-
-
-
-
-
   {{-- Begin mini blog --}}
 <div class="blog">
     <div class="container">
         <h2>
             {{__('index.Recently Posts')}}
+
+
         </h2>
         <div class="row">
+            {{-- start left posts --}}
             <div class="col-md-6">
                 <div class="col-md-12">
                     <div class="blog-container">
+                        @foreach ($posts as $post)
                     <div class="blog-box">
                         <div class="row">
                         <div class="col-md-6">
                             <div class="sup-content">
-                                <h4>title</h4>
-                            <p>some discription</p>
-                                <a type="button" href="{{url('blog/post')}}">read more <i class="fas fa-eye"></i></a>
+                                <h4>{{ substr(strip_tags($post->title), 0, 20) }}{{ strlen(strip_tags($post->title)) > 20 ? "..." : "" }}</h4>
+                            <p>{{ substr(strip_tags($post->body), 0, 100) }}{{ strlen(strip_tags($post->body)) > 100 ? "..." : "" }}</p>
+                                <a type="button" href="{{ route('front.blog.single', $post->slug) }}">read more <i class="fas fa-eye"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6">
                         <div class="img-box">
-                            <img src="{{asset('imgs/services/1593723338.jpg')}}">
+                            @if(!empty($post->image))
+			        	<img src="{{asset('/images/' . $post->image)}}" />
+                               @endif
+                               @if (empty($post->image))
+                                 <img src="{{asset('imgs/services/1593723338.jpg')}}">
+                               @endif
+
                         </div>
                         </div>
                         </div>
                 </div>
-                    <div class="blog-box">
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="sup-content">
-                                <h4>title</h4>
-                            <p>some discription</p>
-                                <a class="read-more" type="button" href="#">read more <i class="fas fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="img-box">
-                            <img src="{{asset('imgs/services/1593723338.jpg')}}">
-                        </div>
-                        </div>
-                        </div>
-                </div>
-                    <div class="blog-box">
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="sup-content">
-                                <h4>title</h4>
-                            <p>some discription</p>
-
-                                <a class="read-more" type="button" href="{{url('blog/post')}}">read amore <i class="fas fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="img-box">
-                            <img src="{{asset('imgs/services/1593723338.jpg')}}">
-                        </div>
-                        </div>
-                        </div>
-                </div>
-                    <div class="blog-box">
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="sup-content">
-                                <h4>title</h4>
-                            <p>some discription</p>
-
-                                <a class="read-more" type="button" href="{{url('blog/post')}}">read more <i class="fas fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="img-box">
-                            <img src="{{asset('imgs/services/1593723338.jpg')}}">
-                        </div>
-                        </div>
-                        </div>
-                </div>
-
-
-            </div>
-
+                @endforeach
             </div>
             </div>
+            </div>
+            {{-- End left posts --}}
+            {{-- begin right slide posts --}}
             <div class="col-md-6">
 
                 <div class="blog-box-left">
-                <div class="content-post" style="background-image: url('{{asset('imgs/services/1593723338.jpg')}}') ">
-                    <div class="blog-box-block ">
-                        <h3 class="text-center">Title of the post</h3>
-                        <p class="text-center">Any Contetent Here</p>
-                        <a class="read-more text-center" type="button" href="{{url('blog/post')}}">  view Full Post <i class="fas fa-eye"></i></a>
-                    </div>
 
-                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+
+                            @foreach ($slidePosts as $key => $post)
+                            <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+
+                                @if(!empty($post->image))
+                                <img class="d-block w-100 content-post" src="{{asset('/images/' . $post->image)}}" alt="First slide">
+                               @endif
+                               @if (empty($post->image))
+                               <img class="d-block w-100 content-post" src="{{asset('imgs/services/1593723338.jpg')}}" alt="First slide">
+                               @endif
+
+                                <div class="carousel-caption d-none d-md-block blog-box-block">
+                                    <h5>{{$post->title}}</h5>
+                                    <p>{{ substr(strip_tags($post->body), 0, 50) }}{{ strlen(strip_tags($post->body)) > 50 ? "..." : "" }}</p>
+                                <a class="read-more text-center"  type="button" href="{{ route('front.blog.single', $post->slug) }}">View full Post <i class="fas fa-eye"></i></a>
+                                </div>
+                            </div>
+                            @endforeach
+
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
 
                 </div>
             </div>
+            {{-- End right slide posts --}}
         </div>
     </div>
 </div>

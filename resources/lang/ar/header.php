@@ -17,7 +17,7 @@ return [
         "Dewi" => "ديوي",
         "Our custmoer"=>"عملائنا",
         "blog"  => "المدونه",
-        "Amr M.c"=>"عمرو",
+        "MOSTASHARY"=>"مستشاري",
         'Translation' => 'خدمات الترجمه',
 ];
 

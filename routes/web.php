@@ -18,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Auth::routes();
+// Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group([
@@ -35,7 +40,10 @@ Route::group([
     Route::get('tester','indexController@homePage');
     Route::get('translation','indexController@future')->name('translation');
     Route::get('services','indexController@services')->name('services');
+######### begin blog ##########
+Route::get('blog/{slug}', ['as' => 'front.blog.single', 'uses' => 'BlogController@get'])->where('slug', '[\w\d\-\_]+');
 
+######## End Blog #########
 
 
 });

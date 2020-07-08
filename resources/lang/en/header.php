@@ -15,7 +15,7 @@ return [
         "Dewi"=>"Dewi",
         "Our custmoer"=>"Our custmoer",
         "blog"  => "blog",
-        "Amr M.c" => "Amr M.c",
+        "MOSTASHARY" => "MOSTASHARY",
         'Translation' =>'Translation',
 
 ];

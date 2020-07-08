@@ -62,4 +62,26 @@
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
     color:#d0c3c3
 }
+.post-time{
+    font-size: 14px;
+	font-style: italic;
+	color: #aaa;
+}
+.custom-header{
+    background-color:#4e73df ;
+    color: #FFF;
+}
+.custom-body{
+    border: 1px solid #1d4edc;
+}
+.category-name{
+    font-size: 14px;
+	font-style: italic;
+	color: #aaa;
+}
+.background{
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+    background-size: cove
+}
 /* End genral touch */

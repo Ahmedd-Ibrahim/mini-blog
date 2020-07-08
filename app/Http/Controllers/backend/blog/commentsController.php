@@ -42,7 +42,7 @@ class CommentsController extends Controller
 
         Session::flash('success', 'Comment was added');
 
-        return redirect()->route('blog.single', [$post->slug]);
+        return redirect()->back();
     }
 
 
