@@ -7,8 +7,7 @@
             <div class="footer-info">
             <h3>{{__('header.MOSTASHARY')}}</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
+
                 <strong>Phone:</strong> +1 5589 55488 55<br>
                 <strong>Email:</strong> info@example.com<br>
               </p>
@@ -22,28 +21,27 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+          <h4>{{__('footer.Useful Links')}}</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="{{url('index')}}">{{__('footer.Home')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="{{url('about')}}">{{__('footer.About us')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="{{url('PORTFOLIO')}}">{{__('footer.PORTFOLIO')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="">{{__('footer.Privacy policy')}}</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+          <h4>{{__('footer.Our Services')}}</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="{{url('blog')}}">{{__('footer.Blog')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="">{{__('footer.translation')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('footer.Product Management')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('footer.Marketing')}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">{{__('footer.Graphic Design')}}</a></li>
             </ul>
           </div>
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          <h4>{{__('footer.Our Newsletter')}}</h4>
+          <p>{{__('footer.Tamen quem nulla quae legam multos aute sint culpa legam noster magna')}}</p>
           </div>
         </div>
       </div>
@@ -51,7 +49,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Daaewi</span></strong>. All Rights Reserved
+      &copy;  <strong><span>{{__('footer.MOSTASHARY')}}</span></strong>. {{__('footer.All Rights Reserved')}}
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -80,4 +78,3 @@
 <script src="{{asset('frontend/assets/js/main.js')}}"></script>
 </body>
 </html>
-

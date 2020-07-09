@@ -100,9 +100,6 @@ Route::group(['prefix' => 'admin','namespace'=>'backend','middleware'=>'auth'], 
 
 	Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 	Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
-    Route::get('contact', 'PagesController@getContact');
-    Route::post('contact', 'PagesController@postContact');
-	Route::get('about', 'PagesController@getAbout');
 	Route::get('/', 'PagesController@getIndex');
 	Route::resource('posts', 'PostController');
     });
@@ -116,12 +113,23 @@ Route::group(['prefix' => 'admin','namespace'=>'backend','middleware'=>'auth'], 
     #### End comments route
 
 
-    // #### main pages
+     #### begin main pages
     Route::group(['namespace'=>'pages'],function(){
         Route::get('pages','pagesController@pages');  //  mange posts
 
         });
     ####### End Main pages
+
+    ####### begin Clinet route
+    Route::group(['namespace'=>'clinet'],function(){
+
+        Route::get('clinet','clinetController@index');  //  mange clinets
+         Route::get('clinet/edit/{clinet}','clinetController@edit');  // Edit clinets
+         Route::post('clinet/update/{clinet}','clinetController@update');  // update clinets
+        });
+    ####### End Clinet route
+
+
 
 
 });

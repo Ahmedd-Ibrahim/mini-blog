@@ -55,12 +55,24 @@
 .navbar-default .navbar-header a{
     color: #FFF;
 }
+.navbar-default .navbar-header a:hover{
+    color: #ffeded;
+}
 .navbar-default .navbar-nav>li>a{
     color: #FFF;
 }
-
+.navbar-default .navbar-nav>li>a:hover{
+    color:  #ffeded;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    color: #FFF;
+}
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
-    color:#d0c3c3
+    color: #ffeded;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background-color: #7194fa;
+    color:#FFF;
 }
 .post-time{
     font-size: 14px;

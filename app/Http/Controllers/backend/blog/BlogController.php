@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\backend\blog;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Post;
 

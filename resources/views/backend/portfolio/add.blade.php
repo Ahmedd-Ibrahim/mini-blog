@@ -77,6 +77,27 @@
                   </div>
                   @enderror
                   <div class="form-group col-md-12">
+                    <label for="inputPassword4">Category</label>
+
+<div class="input-group mb-3">
+    <select name="category" class="custom-select" id="inputGroupSelect02">
+      <option selected>Choose...</option>
+      <option value="web">web</option>
+      <option value="app">app</option>
+      <option value="card">card</option>
+    </select>
+    <div class="input-group-append">
+      <label class="input-group-text" for="inputGroupSelect02">Category</label>
+    </div>
+  </div>
+                  </div>
+                  @error('category')
+                  <div class="clearFix"></div>
+                  <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                  </div>
+                  @enderror
+                  <div class="form-group col-md-12">
                     <label for="inputPassword4">photo</label>
                     <input type="file" class="form-control" id="inputPassword4" placeholder="discription" name="photo">
                   </div>

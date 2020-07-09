@@ -1,6 +1,31 @@
 @extends('frontend.inclouds.master')
 @section('content')
   <!-- ======= Hero Section ======= -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+// scroll to bottom
+  $(".custom-scroll-btn-up").click(function() { // buttom scroll up
+    $('.blog-container').animate({
+        scrollTop: $(".target0").offset().top = 0
+// scrollTo('#up');
+    }, 1000);
+
+});
+// End scroll bottom
+// scroll to Top
+$(".custom-scroll-btn-down").click(function() { // buttom scroll down
+    $('.blog-container').animate({
+        scrollTop: $(".blog-container").offset().top
+// scrollTo('#up');
+    }, 1000);
+
+});
+// End  scroll to Top
+  });
+
+</script>
   <section id="hero">
     <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
 
@@ -51,7 +76,8 @@
 
 
  <!-- ======= About Section ======= -->
- {{-- <section id="about" class="about">
+
+ <section id="about" class="about">
     <div class="container" data-aos="fade-up">
 
       <div class="row justify-content-end">
@@ -61,32 +87,32 @@
             <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-simple-smile"></i>
-                <span data-toggle="counter-up">65</span>
-                <p>Happy Clients</p>
+                <span data-toggle="counter-up">{{$clinet->number}}</span>
+              <p>{{$clinet->name}}</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-document-folder"></i>
-                <span data-toggle="counter-up">85</span>
-                <p>Projects</p>
+                <span data-toggle="counter-up">{{$projects->number}}</span>
+                <p>{{$projects->name}}</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-clock-time"></i>
-                <span data-toggle="counter-up">12</span>
-                <p>Years of experience</p>
+                <span data-toggle="counter-up">{{$experience->number}}</span>
+              <p>{{$experience->name}}</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-award"></i>
-                <span data-toggle="counter-up">15</span>
-                <p>Awards</p>
+                <span data-toggle="counter-up">{{$awrd->number}}</span>
+                <p>{{$awrd->name}}</p>
               </div>
             </div>
 
@@ -94,36 +120,9 @@
         </div>
       </div>
 
-      <div class="row">
-
-        <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-        <img src="{{asset('frontend/assets/img/about.jpg')}}" class="img-fluid" alt="">
-          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-        </div>
-
-        <div class="col-lg-6 pt-3 pt-lg-0 content">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-          <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
-            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-          </ul>
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p>
-        </div>
-
-      </div>
 
     </div>
-  </section> --}}
+  </section>
 
 
   <!-- End About Section -->
@@ -132,20 +131,25 @@
 
 
   {{-- Begin mini blog --}}
-<div class="blog">
+
+  <div class="blog">
     <div class="container">
-        <h2>
+        <h2 class="recent-posts">
             {{__('index.Recently Posts')}}
 
 
         </h2>
         <div class="row">
             {{-- start left posts --}}
-            <div class="col-md-6">
+        <div class="col-md-6" >
                 <div class="col-md-12">
+                    <button class="btn btn-primary custom-scroll-btn-up">Scroll up</button>
+
+
                     <div class="blog-container">
-                        @foreach ($posts as $post)
-                    <div class="blog-box">
+                        <div id="up"></div>
+                        @foreach ($posts as $keys => $post)
+                    <div class="blog-box target{{$keys}}">
                         <div class="row">
                         <div class="col-md-6">
                             <div class="sup-content">
@@ -168,14 +172,17 @@
                         </div>
                 </div>
                 @endforeach
+                <div id="down"></div>
             </div>
+            <button  class="btn btn-primary custom-scroll-btn-down">Scroll Down</button>
+
             </div>
             </div>
             {{-- End left posts --}}
             {{-- begin right slide posts --}}
             <div class="col-md-6">
 
-                <div class="blog-box-left">
+                <div class="blog-box-left index-box">
 
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -226,4 +233,6 @@
 
 
   </main><!-- End #main -->
+  <hr>
+
   @endsection

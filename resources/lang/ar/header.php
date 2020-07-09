@@ -19,6 +19,7 @@ return [
         "blog"  => "المدونه",
         "MOSTASHARY"=>"مستشاري",
         'Translation' => 'خدمات الترجمه',
+        'Get Started' => 'أبدأ',
 ];
 
 ?>

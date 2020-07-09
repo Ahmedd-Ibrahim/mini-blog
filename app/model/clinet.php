@@ -3,25 +3,20 @@
 namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 
-class Portfolio extends Model
+class clinet extends Model
 {
     //
-    //
+    protected $table = 'clinet';
 
-    use Notifiable;
-    protected $table = "portfolio";
-
-
-    /**
+      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
 
     protected $fillable = [
-        'name_en', 'photo', 'discription_en','link','name_ar','discription_ar','category'
+        'name_en','name_ar','number',
     ];
 
     /**

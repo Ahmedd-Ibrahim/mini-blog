@@ -29,10 +29,11 @@ class portfolioController extends Controller
             'discription_ar' => 'required | min:3 ',
             'photo' => 'required ',
             'link' => 'required ',
+            'category' => 'required ',
         ]);
 
         // insert data and redirect
-
+// return dd($request);
         $full_name = time().'.'. $request->photo->getClientOriginalExtension();
         $move_to = 'imgs/portfolio/';
         $full_photo = $move_to.$full_name;
@@ -44,6 +45,7 @@ class portfolioController extends Controller
             'discription_ar'  => $request->discription_ar,
             'photo' =>   $full_photo ,
             'link' =>   $request->link ,
+            'category' => $request->category
         ]);
         return redirect('admin/portfolio')->with(['added'=> 'success added Your Category']);
             }
@@ -84,6 +86,7 @@ public function update(Request $request , $Portfolio_id ){
         'discription_ar' => 'required | min:3 ',
         'photo' => 'required ',
         'link' => 'required ',
+        'category' => 'required'
     ]);
 
     if(!$myCat){
@@ -101,7 +104,8 @@ $myCat->update([
     'name_ar'         => $request->name_ar,
     'discription_ar'  => $request->discription_ar,
     'link'  =>           $request->link,
-    'photo' =>           $full_photo
+    'photo' =>           $full_photo,
+    'category' => $request->category
 ]);
 return redirect('admin/portfolio')->with(['updated'=> 'success added Your portfolio']);
     }

@@ -55,9 +55,9 @@
         <ul>
         <li class="{{Route::current()->getName() ==='index' ? 'active' : '' }}"><a href="{{url('index')}}">{{__('header.Home')}}</a></li>
         <li class="{{Route::current()->getName() ==='about' ? 'active' : '' }}"><a href="{{url('about')}}">{{__('header.About')}}</a></li>
-          <li  class="{{Route::current()->getName() ==='translation' ? 'active' : '' }}"><a href="{{url('translation')}}">{{__('header.Translation')}}</a></li>
+          {{-- <li  class="{{Route::current()->getName() ==='translation' ? 'active' : '' }}"><a href="{{url('translation')}}">{{__('header.Translation')}}</a></li> --}}
           <li class="{{Route::current()->getName() ==='portfolio' ? 'active' : '' }}"><a href="{{url('portfolio')}}">{{__('header.Our custmoer')}}</a></li>
-
+{{--
           <li class="drop-down"><a>{{__('header.Services')}}</a>
             <ul>
                 <li><a href="{{'services'}}">{{__('Our Services')}}</a></li>
@@ -75,7 +75,7 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> --}}
         <li class=" {{Route::current()->getName() ==='contact' ? 'active' : '' }}"><a href="{{url('contact')}}">{{__('header.Contact')}}</a></li>
         <li class="{{Route::current()->getName() ==='blog' ? 'active' : '' }}" ><a href="{{url('blog')}}">{{__('header.blog')}}</a></li>
         <li class="drop-down"><a href="#">{{__('header.language')}}</a>
@@ -90,7 +90,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-    <a href="{{url('about')}}" class="get-started-btn scrollto">Get Started</a>
+    <a href="{{url('about')}}" class="get-started-btn scrollto">{{__('header.Get Started')}}</a>
 
     </div>
   </header><!-- End Header -->

@@ -84,11 +84,11 @@
           <a class="collapse-item" href="{{url('admin/portfolio')}}">Custmoer Settings</a>
           <a class="collapse-item" href="{{url('admin/about')}}">About Settings</a>
           <a class="collapse-item" href="{{url('admin/contact')}}">Contact Settings</a>
+          <a class="collapse-item" href="{{url('admin/clinet')}}">Clinets Settings</a>
           <a class="collapse-item" href="{{url('admin/team')}}">team Settings</a>
           </div>
         </div>
       </li>
-
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">

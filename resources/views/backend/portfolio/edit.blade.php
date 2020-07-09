@@ -77,6 +77,21 @@
             </div>
             @enderror
             <div class="form-group col-md-12">
+                <label for="inputPassword4">Category</label>
+
+<div class="input-group mb-3">
+<select name="category" class="custom-select" id="inputGroupSelect02">
+  <option selected>Choose...</option>
+  <option value="web">web</option>
+  <option value="app">app</option>
+  <option value="card">card</option>
+</select>
+<div class="input-group-append">
+  <label class="input-group-text" for="inputGroupSelect02">Category</label>
+</div>
+</div>
+              </div>
+            <div class="form-group col-md-12">
               <label for="inputPassword4">this is photo</label>
             <input type="file" class="form-control" id="inputPassword4" placeholder="photo" name="photo">
             </div>

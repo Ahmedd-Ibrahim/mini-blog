@@ -1,7 +1,6 @@
-{{-- @extends('backend.newBlog.main') --}}
-@extends('backend.inclouds.master')
+@extends('backend.newBlog.main')
+{{-- @extends('backend.inclouds.master') --}}
 @section('title', '| All Posts')
-
 @section('content')
 <div class="container">
 	<div class="row">
@@ -26,11 +25,8 @@
 					<th>Created At</th>
 					<th></th>
 				</thead>
-
 				<tbody>
-
 					@foreach ($posts as $post)
-
 						<tr>
 							<th>{{ $post->id }}</th>
 							<td>{{ $post->title }}</td>
@@ -38,12 +34,9 @@
 							<td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
 							<td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">Edit</a></td>
 						</tr>
-
 					@endforeach
-
 				</tbody>
 			</table>
-
 			<div class="text-center">
 				{!! $posts->links(); !!}
 			</div>

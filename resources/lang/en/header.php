@@ -17,6 +17,7 @@ return [
         "blog"  => "blog",
         "MOSTASHARY" => "MOSTASHARY",
         'Translation' =>'Translation',
+        'Get Started' =>'Get Started',
 
 ];
 

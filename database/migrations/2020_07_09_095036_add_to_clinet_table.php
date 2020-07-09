@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddToPortfolioTable extends Migration
+class AddToClinetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class AddToPortfolioTable extends Migration
      */
     public function up()
     {
-        Schema::table('portfolio', function (Blueprint $table) {
+        Schema::table('clinet', function (Blueprint $table) {
             //
             $table->string('name_ar');
-            $table->string('discription_ar');
-            $table->string('category');
         });
     }
 
@@ -28,9 +26,10 @@ class AddToPortfolioTable extends Migration
      */
     public function down()
     {
-        Schema::table('portfolio', function (Blueprint $table) {
+        Schema::table('clinet', function (Blueprint $table) {
             //
-            Schema::dropIfExists('portfolio');
+
+            Schema::dropIfExists('clinet');
         });
     }
 }

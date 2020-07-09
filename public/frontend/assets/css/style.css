@@ -15,7 +15,6 @@ body {
 
 a {
   color: #ff4a17;
-
 }
 /* login */
 .login-btn{
@@ -1710,7 +1709,7 @@ section {
 }
 .img-box{
     overflow: hidden;
-    max-height:180px;
+    height:221px;
 }
 .img-box img{
     height:100%;
@@ -1741,7 +1740,7 @@ margin-bottom: 20px;
 position: relative;
 }
 .blog .blog-box-left .content-post{
-    height: 565px;
+    height: 350px;
 }
 .blog .blog-container{
     max-height: 580px;
@@ -1763,6 +1762,42 @@ position: relative;
     right: 0;
     left:0;
     bottom:16px;
+}
+.blog .image-box{
+    overflow: hidden;
+    position: relative;
+}
+.blog .image-box{
+    overflow: hidden;
+    position: relative;
+}
+.blog .image-box img{
+    width: 100%;
+    height: 350px;
+}
+.blog .pagination {
+    margin: 0 auto;
+    width: max-content;
+}
+.index-box{
+    height: 650px;
+}
+.index-box .content-post{
+    height: 650px !important;
+}
+.custom-scroll-btn-up, .custom-scroll-btn-down{
+    width: 100%;
+    background-color: #343a40;
+}
+html{
+    scroll-behavior: smooth;
+}
+.recent-posts{
+    margin: 0 17px;
+    padding-bottom: 15px;
+}
+.custom-scroll-btn-up:hover , .custom-scroll-btn-down:hover{
+    background-color: #424b55;
 }
 /************************************ End blog ******************************************** */
 

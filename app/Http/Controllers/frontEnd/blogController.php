@@ -8,12 +8,11 @@ use App\Post;
 class blogController extends Controller
 {
     //
-
     public function blog(){
-        $posts = Post::paginate(10);
-        $sildePosts = Post::paginate(3);
+        $posts = Post::paginate(12);
+
         return view('frontend.blog')->withPosts($posts);
-        // return view('frontend.blog')->compact('posts','sildePosts');
+
     }
     public function post(){
 
