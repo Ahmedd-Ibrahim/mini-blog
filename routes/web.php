@@ -41,7 +41,7 @@ Route::group([
     Route::get('translation','indexController@future')->name('translation');
     Route::get('services','indexController@services')->name('services');
 ######### begin blog ##########
-Route::get('blog/{slug}', ['as' => 'front.blog.single', 'uses' => 'BlogController@get'])->where('slug', '[\w\d\-\_]+');
+Route::get('blog/{slug}', ['as' => 'front.blog.single', 'uses' => 'blogController@get'])->where('slug', '[\w\d\-\_]+');
 
 ######## End Blog #########
 
